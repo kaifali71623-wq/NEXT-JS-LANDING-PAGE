@@ -245,7 +245,9 @@
     text-wrap: pretty;
   }
 
-/* ─── CUSTOM SCROLLBAR ─── */
+/* ─────────────────────────────────────────
+   CUSTOM SCROLLBAR — DESKTOP / TABLET
+   ───────────────────────────────────────── */
 
 ::-webkit-scrollbar {
   width: 10px;
@@ -253,12 +255,12 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--background);
+  background: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
   background: #c8c8c2;
-  border-radius: 10px;
+  border-radius: 999px;
   border: 2px solid var(--background);
 }
 
@@ -267,36 +269,44 @@
 }
 
 
-/* ─── MOBILE SCROLLBAR ─── */
+/* ─────────────────────────────────────────
+   MOBILE — THUMB ONLY
+   No visible track
+   ───────────────────────────────────────── */
 
 @media (max-width: 767px) {
-  /* Keep the thumb, remove the visible track */
+
+  /* Make scrollbar very thin */
   ::-webkit-scrollbar {
-    width: 8px;
-    height: 8px;
-    background: transparent;
+    width: 4px;
+    height: 4px;
+    background: transparent !important;
   }
 
+  /* Completely invisible track */
   ::-webkit-scrollbar-track {
-    background: #0a0a0a !important;
+    background: transparent !important;
+    width: 0 !important;
     border: none !important;
     box-shadow: none !important;
   }
 
+  /* Only the thumb is visible */
   ::-webkit-scrollbar-thumb {
     background: #c8c8c2 !important;
     border: none !important;
-    border-radius: 999px;
+    border-radius: 999px !important;
+    min-height: 35px;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background: #2c64a1 !important;
+    background: #c8c8c2 !important;
   }
 
-  /* Firefox / other browsers */
+  /* Firefox */
   html {
     scrollbar-width: thin;
-    scrollbar-color: #c8c8c2 #0a0a0a;
+    scrollbar-color: #c8c8c2 transparent;
   }
 }
 
