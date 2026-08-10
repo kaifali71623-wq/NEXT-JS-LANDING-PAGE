@@ -276,61 +276,62 @@ body::-webkit-scrollbar-thumb:hover {
 
 
 /* =========================================================
-   MOBILE — THUMB ONLY
+   MOBILE SCROLLBAR — THUMB ONLY
    ========================================================= */
 
 @media (max-width: 767px) {
 
   html,
-  body {
+  body,
+  * {
     scrollbar-width: thin;
-    scrollbar-color: #c8c8c2 #0a0a0a;
+    scrollbar-color: #c8c8c2 transparent;
   }
 
-  /* The scrollbar itself */
   html::-webkit-scrollbar,
-  body::-webkit-scrollbar {
-    width: 5px !important;
-    height: 5px !important;
-
-    /* THIS is the important part */
-    background: #0a0a0a !important;
+  body::-webkit-scrollbar,
+  *::-webkit-scrollbar {
+    width: 4px !important;
+    height: 4px !important;
+    background: transparent !important;
   }
 
-  /* Track = same color as page */
   html::-webkit-scrollbar-track,
-  body::-webkit-scrollbar-track {
-    width: 5px !important;
-    background: #0a0a0a !important;
-    border: none !important;
+  body::-webkit-scrollbar-track,
+  *::-webkit-scrollbar-track {
+    background: transparent !important;
+    background-color: transparent !important;
+    border: 0 !important;
     box-shadow: none !important;
   }
 
-  /* Track pieces */
   html::-webkit-scrollbar-track-piece,
-  body::-webkit-scrollbar-track-piece {
-    background: #0a0a0a !important;
-    border: none !important;
+  body::-webkit-scrollbar-track-piece,
+  *::-webkit-scrollbar-track-piece {
+    background: transparent !important;
+    background-color: transparent !important;
+    border: 0 !important;
   }
 
-  /* ONLY visible scrollbar element */
   html::-webkit-scrollbar-thumb,
-  body::-webkit-scrollbar-thumb {
+  body::-webkit-scrollbar-thumb,
+  *::-webkit-scrollbar-thumb {
     background: #c8c8c2 !important;
-    border: none !important;
+    border: 0 !important;
     border-radius: 999px !important;
-    min-height: 35px;
+    min-height: 32px !important;
   }
 
   html::-webkit-scrollbar-thumb:hover,
-  body::-webkit-scrollbar-thumb:hover {
+  body::-webkit-scrollbar-thumb:hover,
+  *::-webkit-scrollbar-thumb:hover {
     background: #c8c8c2 !important;
   }
 
-  /* Corner */
   html::-webkit-scrollbar-corner,
-  body::-webkit-scrollbar-corner {
-    background: #0a0a0a !important;
+  body::-webkit-scrollbar-corner,
+  *::-webkit-scrollbar-corner {
+    background: transparent !important;
   }
 }
 
