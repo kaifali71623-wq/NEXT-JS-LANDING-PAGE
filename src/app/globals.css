@@ -241,23 +241,6 @@
     text-wrap: pretty;
   }
 
-  /* Custom scrollbar */
-  ::-webkit-scrollbar {
-    width: 10px;
-    height: 10px;
-  }
-  ::-webkit-scrollbar-track {
-    background: transparent;
-  }
-  ::-webkit-scrollbar-thumb {
-    background: #c8c8c2;
-    border-radius: 10px;
-    border: 2px solid var(--background);
-  }
-  ::-webkit-scrollbar-thumb:hover {
-    background: #2c64a1;
-  }
-
   /* Marquee animations */
   @keyframes marquee {
     0% { transform: translateX(0); }
@@ -337,13 +320,13 @@
     cursor: pointer;
   }
 
-  /* Hide scrollbar utility */
-  .no-scrollbar::-webkit-scrollbar {
-    display: none;
-  }
-  .no-scrollbar {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
+  /* Mobile iframe safety: prevent horizontal overflow without changing width. */
+  @media (max-width: 767px) {
+    html,
+    body {
+      overflow-x: hidden;
+      max-width: 100%;
+    }
   }
 
   /* Magnetic button base */
@@ -477,5 +460,29 @@
   .glow-card:hover {
     transform: none !important;
     box-shadow: none !important;
+  }
+}
+
+
+/* ─── gpt code ─── */
+
+/* Mobile scrollbar */
+@media (max-width: 767px) {
+  html {
+    scrollbar-width: thin;
+    scrollbar-color: #c8c8c2 transparent;
+  }
+
+  html::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  html::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  html::-webkit-scrollbar-thumb {
+    background: #c8c8c2;
+    border-radius: 10px;
   }
 }
