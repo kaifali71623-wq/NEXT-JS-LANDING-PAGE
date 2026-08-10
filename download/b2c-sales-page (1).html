@@ -1,0 +1,1210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kaif Ali — Book a Fit Call | B2C Service Business Websites</title>
+<meta name="description" content="Most website problems aren't design problems. They're thinking problems. Book a Fit Call with Kaif Ali — 7 years, 500+ sites reviewed, 200+ projects delivered.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* ===== RESET ===== */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:5rem;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;overflow-x:hidden;max-width:100vw}
+body{font-family:'Manrope',system-ui,sans-serif;background:#f6f6f4;color:#0a0a0a;overflow-x:hidden;max-width:100vw;-webkit-tap-highlight-color:transparent;line-height:1.5}
+img{max-width:100%;display:block}
+a,button{cursor:pointer;text-decoration:none;color:inherit;font-family:inherit}
+button{background:none;border:none;font-size:inherit}
+ul{list-style:none}
+::selection{background:#2c64a1;color:#fff}
+:focus-visible{outline:2px solid #2c64a1;outline-offset:3px;border-radius:4px}
+
+/* ===== VARIABLES ===== */
+:root{
+  --ink:#0a0a0a;--paper:#f6f6f4;--brand:#2c64a1;--brand-soft:#a9d2ff;
+  --radius:1.25rem;
+}
+
+/* ===== CONTAINER ===== */
+.kaif-container{max-width:1600px;margin:0 auto;padding-left:1.25rem;padding-right:1.25rem}
+@media(min-width:768px){.kaif-container{padding-left:2.5rem;padding-right:2.5rem}}
+
+/* ===== TYPOGRAPHY ===== */
+.font-display{font-family:'Audiowide',system-ui,sans-serif;font-weight:400;text-transform:uppercase;letter-spacing:.01em}
+.h-hero{font-family:'Audiowide',system-ui,sans-serif;font-weight:400;text-transform:uppercase;letter-spacing:.01em;line-height:1.05;font-size:clamp(1.75rem,5vw,3.25rem)}
+.h-section{font-family:'Audiowide',system-ui,sans-serif;font-weight:400;text-transform:uppercase;letter-spacing:.01em;line-height:1.1;font-size:clamp(1.375rem,3.5vw,2.75rem)}
+.h-card{font-family:'Audiowide',system-ui,sans-serif;font-weight:400;text-transform:uppercase;letter-spacing:.02em;line-height:1.15;font-size:clamp(1rem,1.8vw,1.5rem)}
+.text-balance{text-wrap:balance}
+.text-gradient-brand{background:linear-gradient(135deg,#2c64a1 0%,#a9d2ff 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+
+/* ===== GLASS ===== */
+.glass{background:rgba(255,255,255,.7);backdrop-filter:blur(20px) saturate(180%);-webkit-backdrop-filter:blur(20px) saturate(180%);border:1px solid rgba(255,255,255,.3)}
+.glass-nav{background:rgba(246,246,244,.7);backdrop-filter:blur(24px) saturate(180%);-webkit-backdrop-filter:blur(24px) saturate(180%);border:1px solid rgba(10,10,10,.06)}
+
+/* ===== GRID BG ===== */
+.bg-grid{background-image:linear-gradient(rgba(10,10,10,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(10,10,10,.025) 1px,transparent 1px);background-size:56px 56px}
+.bg-grid-dark{background-image:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);background-size:56px 56px}
+
+/* ===== ANIMATIONS ===== */
+@keyframes mesh-drift-1{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(40px,-30px) scale(1.1)}66%{transform:translate(-30px,20px) scale(.95)}}
+@keyframes mesh-drift-2{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-50px,40px) scale(1.15)}}
+.animate-mesh-1{animation:mesh-drift-1 18s ease-in-out infinite}
+.animate-mesh-2{animation:mesh-drift-2 22s ease-in-out infinite}
+@keyframes shine{0%{transform:translateX(-120%) skewX(-15deg)}100%{transform:translateX(220%) skewX(-15deg)}}
+.shine-on-hover{position:relative;overflow:hidden}
+.shine-on-hover::after{content:"";position:absolute;top:0;left:0;width:60%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.25),transparent);transform:translateX(-120%) skewX(-15deg);pointer-events:none}
+.shine-on-hover:hover::after{animation:shine .9s ease-out}
+@keyframes ping{75%,100%{transform:scale(2);opacity:0}}
+.animate-ping{animation:ping 1.5s cubic-bezier(0,0,.2,1) infinite}
+@keyframes pulse-dot{0%,100%{opacity:1}50%{opacity:.5}}
+
+/* ===== REVEAL ON SCROLL ===== */
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .7s cubic-bezier(.25,.1,.25,1),transform .7s cubic-bezier(.25,.1,.25,1)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.stagger-item{opacity:0;transform:translateY(16px);transition:opacity .6s cubic-bezier(.25,.1,.25,1),transform .6s cubic-bezier(.25,.1,.25,1)}
+.stagger-item.visible{opacity:1;transform:translateY(0)}
+
+/* ===== GLOW CARD ===== */
+.glow-card{transition:transform .4s cubic-bezier(.25,.1,.25,1),box-shadow .4s ease,border-color .4s ease}
+.glow-card:hover{transform:translateY(-4px);box-shadow:0 24px 50px -20px rgba(44,100,161,.25)}
+
+/* ===== SCROLL PROGRESS ===== */
+.scroll-progress{position:fixed;top:0;left:0;right:0;height:2px;z-index:100;transform-origin:left;transform:scaleX(0);background:linear-gradient(90deg,#2c64a1,#a9d2ff,#2c64a1);transition:transform .1s linear}
+
+/* ===== SKIP LINK ===== */
+.skip-link{position:absolute;top:-100px;left:1rem;z-index:200;background:#0a0a0a;color:#f6f6f4;padding:.75rem 1.5rem;border-radius:.75rem;font-size:.875rem;font-weight:600;transition:top .2s ease}
+.skip-link:focus{top:1rem}
+
+/* ===== NAVBAR ===== */
+.kaif-header{position:fixed;top:0;left:0;right:0;z-index:50;transition:padding .3s ease}
+.kaif-header.scrolled{padding-top:.5rem;padding-bottom:.5rem}
+.kaif-header:not(.scrolled){padding-top:.75rem;padding-bottom:.75rem}
+.kaif-nav{display:flex;align-items:center;justify-content:space-between;border-radius:9999px;padding:.5rem .75rem;transition:all .3s ease}
+@media(min-width:768px){.kaif-nav{padding:.5rem 1.25rem}}
+.kaif-header.scrolled .kaif-nav{box-shadow:0 8px 32px -8px rgba(10,10,10,.15)}
+.kaif-logo{display:flex;align-items:center;gap:.5rem}
+.kaif-logo-badge{display:flex;align-items:center;justify-content:center;width:2rem;height:2rem;border-radius:9999px;background:#0a0a0a;color:#f6f6f4;font-family:'Audiowide';font-size:.875rem}
+.kaif-logo-text{font-family:'Audiowide';font-size:.875rem;letter-spacing:.08em;color:#0a0a0a;text-transform:uppercase}
+.kaif-nav-links{display:none;align-items:center;gap:.125rem}
+@media(min-width:768px){.kaif-nav-links{display:flex}}
+.kaif-nav-link{display:inline-block;border-radius:9999px;padding:.375rem .875rem;font-size:.8125rem;font-weight:500;color:rgba(10,10,10,.6);transition:all .3s ease}
+.kaif-nav-link:hover{background:rgba(10,10,10,.05);color:#0a0a0a}
+.kaif-nav-link.active{background:rgba(169,210,255,.3);color:#2c64a1}
+.kaif-nav-cta{display:none;align-items:center;gap:.375rem;border-radius:9999px;background:#0a0a0a;padding:.5rem 1rem;font-size:.8125rem;font-weight:600;color:#f6f6f4;transition:background .3s ease}
+.kaif-nav-cta:hover{background:#2c64a1}
+@media(min-width:768px){.kaif-nav-cta{display:inline-flex}}
+.kaif-menu-btn{display:flex;align-items:center;justify-content:center;width:2.25rem;height:2.25rem;border-radius:9999px;background:rgba(10,10,10,.05);color:#0a0a0a}
+@media(min-width:768px){.kaif-menu-btn{display:none}}
+.kaif-menu-icon{position:relative;width:1rem;height:.75rem}
+.kaif-menu-icon span{position:absolute;left:0;height:2px;width:100%;background:#0a0a0a;transition:all .3s ease}
+.kaif-menu-icon span:nth-child(1){top:0}
+.kaif-menu-icon span:nth-child(2){top:.375rem}
+.kaif-menu-icon span:nth-child(3){top:.75rem}
+.kaif-menu-btn[aria-expanded="true"] .kaif-menu-icon span:nth-child(1){top:.375rem;transform:rotate(45deg)}
+.kaif-menu-btn[aria-expanded="true"] .kaif-menu-icon span:nth-child(2){opacity:0}
+.kaif-menu-btn[aria-expanded="true"] .kaif-menu-icon span:nth-child(3){top:.375rem;transform:rotate(-45deg)}
+
+/* ===== AUDIENCE SWITCH ===== */
+.audience-switch{display:inline-flex;align-items:center;gap:.375rem;border-radius:9999px;border:1px solid rgba(10,10,10,.15);background:rgba(255,255,255,.6);padding:.375rem .75rem;font-size:.6875rem;font-weight:600;text-transform:uppercase;letter-spacing:.05em;color:rgba(10,10,10,.7);backdrop-filter:blur(8px);transition:all .3s ease}
+.audience-switch-dot{display:inline-flex;width:6px;height:6px;border-radius:9999px;background:#2c64a1}
+.audience-switch:hover{border-color:rgba(10,10,10,.3);background:#fff;color:#0a0a0a}
+@media(max-width:1023px){.audience-switch-desktop{display:none}}
+
+/* ===== MOBILE MENU ===== */
+.mobile-menu{position:fixed;inset:0;z-index:40;overflow:hidden;transition:opacity .3s ease}
+.mobile-menu.hidden{opacity:0;pointer-events:none}
+.mobile-menu.visible{opacity:1;pointer-events:auto}
+@media(min-width:768px){.mobile-menu{display:none}}
+.mobile-menu-backdrop{position:absolute;inset:0;background:rgba(10,10,10,.4);backdrop-filter:blur(4px)}
+.mobile-menu-panel{position:absolute;right:0;top:0;height:100%;width:78%;max-width:24rem;background:#f6f6f4;padding:1.5rem;padding-top:6rem;box-shadow:0 25px 50px -12px rgba(0,0,0,.25);transition:transform .3s ease;overflow-y:auto}
+.mobile-menu.hidden .mobile-menu-panel{transform:translateX(100%)}
+.mobile-menu-link{display:block;border-radius:.75rem;padding:.75rem 1rem;font-family:'Audiowide';font-size:1rem;letter-spacing:.04em;color:#0a0a0a}
+.mobile-menu-link:hover{background:rgba(10,10,10,.05)}
+.mobile-menu-cta{display:flex;align-items:center;justify-content:center;gap:.5rem;border-radius:9999px;background:#0a0a0a;padding:.875rem 1.5rem;font-size:.875rem;font-weight:600;color:#f6f6f4;margin-top:1rem}
+.mobile-audience-switch{display:flex;align-items:center;justify-content:center;gap:.5rem;border-radius:9999px;border:1px solid rgba(10,10,10,.15);background:#fff;padding:.75rem 1.25rem;font-size:.875rem;font-weight:600;color:#0a0a0a;margin-top:.75rem;width:100%}
+@media(min-width:768px){.mobile-audience-switch{display:none}}
+
+/* ===== HERO ===== */
+.hero{position:relative;overflow:hidden;background:#f6f6f4;padding-top:7rem;padding-bottom:5rem}
+@media(min-width:768px){.hero{padding-top:8rem;padding-bottom:6rem}}
+.hero-grid{display:grid;grid-template-columns:1fr;gap:2rem}
+@media(min-width:1024px){.hero-grid{grid-template-columns:repeat(12,1fr);gap:2.5rem}}
+.hero-left{display:flex;flex-direction:column;justify-content:center}
+@media(min-width:1024px){.hero-left{grid-column:span 7}}
+.hero-right{position:relative}
+@media(min-width:1024px){.hero-right{grid-column:span 5}}
+.eyebrow{display:inline-flex;align-items:center;gap:.5rem;border-radius:9999px;border:1px solid rgba(10,10,10,.1);background:rgba(255,255,255,.6);padding:.375rem .875rem;font-size:.6875rem;font-weight:600;text-transform:uppercase;letter-spacing:.15em;color:rgba(10,10,10,.7);backdrop-filter:blur(8px);width:fit-content}
+.eyebrow-dot{position:relative;display:inline-flex;width:6px;height:6px}
+.eyebrow-dot::before{content:"";position:absolute;inset:0;border-radius:9999px;background:#2c64a1;animation:ping 1.5s cubic-bezier(0,0,.2,1) infinite}
+.eyebrow-dot::after{content:"";position:relative;display:inline-flex;width:6px;height:6px;border-radius:9999px;background:#2c64a9}
+.hero h1{margin-top:1.25rem;color:#0a0a0a}
+.hero-headline-line{display:block;opacity:0;transform:translateY(20px);animation:hero-reveal .7s cubic-bezier(.25,.1,.25,1) forwards}
+.hero-headline-line:nth-child(1){animation-delay:.1s}
+.hero-headline-line:nth-child(2){animation-delay:.2s}
+.hero-headline-line:nth-child(3){animation-delay:.3s}
+@keyframes hero-reveal{to{opacity:1;transform:translateY(0)}
+}
+.hero-headline-highlight{position:relative;display:inline-block}
+.hero-headline-highlight::after{content:"";position:absolute;bottom:-4px;left:0;right:0;height:10px;transform:rotate(-1deg);background:rgba(169,210,255,.7);transform-origin:left;animation:underline-grow .6s .6s cubic-bezier(.25,.1,.25,1) forwards;transform:scaleX(0) rotate(-1deg)}
+@keyframes underline-grow{to{transform:scaleX(1) rotate(-1deg)}}
+.hero-subhead{margin-top:1.5rem;max-width:32rem;font-size:1rem;line-height:1.6;color:rgba(10,10,10,.65)}
+@media(min-width:640px){.hero-subhead{font-size:1.125rem}}
+.hero-stats{margin-top:1.25rem;display:flex;flex-wrap:wrap;align-items:center;gap:.5rem 1rem}
+.hero-stat{display:flex;align-items:baseline;gap:.25rem;white-space:nowrap}
+.hero-stat-value{font-family:'Audiowide';font-size:1rem;color:#0a0a0a}
+.hero-stat-suffix{font-family:'Audiowide';font-size:.75rem;color:#2c64a1;text-transform:uppercase}
+.hero-stat-label{font-size:.6875rem;font-weight:500;color:rgba(10,10,10,.55)}
+.hero-stat-divider{width:1px;height:1.25rem;background:rgba(10,10,10,.1)}
+.hero-ctas{margin-top:2rem;display:flex;flex-direction:column;gap:.75rem}
+@media(min-width:640px){.hero-ctas{flex-direction:row;align-items:center}}
+.btn-primary{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;border-radius:9999px;background:#0a0a0a;padding:1rem 1.75rem;font-size:.875rem;font-weight:600;color:#f6f6f4;transition:background .3s ease}
+.btn-primary:hover{background:#2c64a1}
+.btn-secondary{display:inline-flex;align-items:center;justify-content:center;gap:.375rem;padding:.75rem .75rem;font-size:.875rem;font-weight:500;color:rgba(10,10,10,.6);text-decoration:none;transition:color .3s ease}
+.btn-secondary:hover{color:#0a0a0a;text-decoration:underline;text-underline-offset:4px}
+.hero-risk{margin-top:.75rem;font-size:.75rem;color:rgba(10,10,10,.55)}
+.hero-social{margin-top:1.75rem;display:flex;align-items:center;gap:.5rem;font-size:.75rem;color:rgba(10,10,10,.5)}
+.hero-stars{display:flex;gap:2px}
+.hero-star{width:12px;height:12px;color:#2c64a1;fill:#2c64a1}
+
+/* ===== HERO IMAGE ===== */
+.hero-image-wrap{position:relative;max-width:24rem;margin:0 auto}
+@media(min-width:1024px){.hero-image-wrap{max-width:none}}
+.hero-image-card{position:relative;overflow:hidden;border-radius:1.5rem;border:1px solid rgba(10,10,10,.1);background:#fff;box-shadow:0 20px 60px -20px rgba(10,10,10,.2)}
+.hero-image-card img{aspect-ratio:4/5;width:100%;object-fit:cover}
+.hero-image-badge{position:absolute;left:.75rem;right:.75rem;bottom:.75rem;display:flex;align-items:center;justify-content:space-between;border-radius:.75rem;padding:.625rem .875rem;background:rgba(255,255,255,.7);backdrop-filter:blur(20px) saturate(180%);border:1px solid rgba(255,255,255,.3)}
+.hero-image-badge-name{font-family:'Audiowide';font-size:.875rem;letter-spacing:.04em;color:#0a0a0a;text-transform:uppercase}
+.hero-image-badge-role{font-size:.6875rem;color:rgba(10,10,10,.55)}
+.hero-image-badge-status{display:inline-flex;align-items:center;gap:.375rem;border-radius:9999px;background:rgba(16,163,74,.15);padding:.25rem .625rem;font-size:.625rem;font-weight:600;text-transform:uppercase;letter-spacing:.05em;color:#059669}
+.hero-image-badge-status::before{content:"";width:6px;height:6px;border-radius:9999px;background:#10b981}
+
+/* ===== TRUST BAR ===== */
+.trust{border-top:1px solid rgba(10,10,10,.08);border-bottom:1px solid rgba(10,10,10,.08);background:#fff;padding:3.5rem 0}
+@media(min-width:768px){.trust{padding:4rem 0}}
+.trust-header{display:flex;flex-direction:column;gap:.75rem;margin-bottom:2rem}
+@media(min-width:768px){.trust-header{flex-direction:row;align-items:flex-end;justify-content:space-between;margin-bottom:2.5rem}}
+.trust-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:.75rem}
+@media(min-width:768px){.trust-grid{grid-template-columns:repeat(4,1fr);gap:1rem}}
+.stat-card{border-radius:1rem;border:1px solid rgba(10,10,10,.08);background:#f6f6f4;padding:1rem;transition:all .3s ease}
+.stat-card:hover{border-color:rgba(44,100,161,.2);background:#fff;transform:translateY(-4px);box-shadow:0 24px 50px -20px rgba(44,100,161,.25)}
+@media(min-width:768px){.stat-card{padding:1.25rem}}
+.stat-value{font-family:'Audiowide';font-size:1.875rem;color:#0a0a0a;transition:color .3s ease}
+.stat-card:hover .stat-value{color:#2c64a1}
+@media(min-width:768px){.stat-value{font-size:2.25rem}}
+.stat-suffix{font-family:'Audiowide';font-size:1rem;color:#2c64a1}
+.stat-label{margin-top:.25rem;font-size:.6875rem;font-weight:500;text-transform:uppercase;letter-spacing:.05em;color:rgba(10,10,10,.55)}
+
+/* ===== PROBLEM ===== */
+.problem{position:relative;overflow:hidden;background:#0a0a0a;color:#f6f6f4;padding:5rem 0}
+@media(min-width:768px){.problem{padding:6rem 0}}
+.problem-mesh-1{position:absolute;left:-8rem;top:33%;width:400px;height:400px;border-radius:9999px;background:rgba(44,100,161,.2);filter:blur(140px);animation:mesh-drift-1 18s ease-in-out infinite}
+.problem-mesh-2{position:absolute;right:-8rem;bottom:25%;width:350px;height:350px;border-radius:9999px;background:rgba(169,210,255,.1);filter:blur(140px);animation:mesh-drift-2 22s ease-in-out infinite}
+.problem-content{position:relative;max-width:56rem}
+.problem-eyebrow{display:inline-flex;align-items:center;gap:.5rem;border-radius:9999px;border:1px solid rgba(246,246,244,.2);padding:.375rem .875rem;font-size:.6875rem;font-weight:600;text-transform:uppercase;letter-spacing:.15em;color:rgba(246,246,244,.85)}
+.problem h2{margin-top:1rem}
+.problem-subhead{margin-top:1.25rem;max-width:32rem;font-size:1rem;line-height:1.6;color:rgba(246,246,244,.65)}
+@media(min-width:768px){.problem-subhead{font-size:1.125rem}}
+.problem-cards{margin-top:2.5rem;display:grid;grid-template-columns:1fr;gap:.75rem}
+@media(min-width:768px){.problem-cards{grid-template-columns:repeat(3,1fr);gap:1rem}}
+.problem-card{border-radius:1rem;border:1px solid rgba(246,246,244,.1);background:rgba(255,255,255,.03);padding:1.25rem;transition:all .3s ease}
+@media(min-width:768px){.problem-card{padding:1.5rem}}
+.problem-card:hover{border-color:rgba(169,210,255,.3);background:rgba(255,255,255,.06);transform:translateY(-4px)}
+.problem-card-icon{display:flex;align-items:center;justify-content:center;width:2.5rem;height:2.5rem;border-radius:.5rem;background:rgba(169,210,255,.1);color:#a9d2ff;transition:all .3s ease}
+.problem-card:hover .problem-card-icon{transform:scale(1.1);background:rgba(169,210,255,.2)}
+.problem-card-icon svg{width:18px;height:18px}
+.problem-card h3{margin-top:1rem;font-family:'Audiowide';font-size:1rem;line-height:1.3;letter-spacing:.02em;color:#f6f6f4}
+.problem-card p{margin-top:.375rem;font-size:.875rem;line-height:1.5;color:rgba(246,246,244,.6)}
+.problem-cta{margin-top:2rem;display:flex;flex-direction:column;gap:1.25rem;border-radius:1rem;border:1px solid rgba(169,210,255,.2);background:linear-gradient(135deg,rgba(44,100,161,.1),transparent);padding:1.5rem}
+@media(min-width:768px){.problem-cta{flex-direction:row;align-items:center;padding:1.75rem}}
+.problem-cta-text{flex:1;font-family:'Audiowide';font-size:1rem;line-height:1.3;color:#f6f6f4}
+@media(min-width:768px){.problem-cta-text{font-size:1.125rem}}
+.problem-cta-link{display:inline-flex;align-items:center;gap:.5rem;border-radius:9999px;background:#f6f6f4;padding:.75rem 1.25rem;font-size:.875rem;font-weight:600;color:#0a0a0a;white-space:nowrap;transition:background .3s ease}
+.problem-cta-link:hover{background:#a9d2ff}
+
+/* ===== FIT SCORE ===== */
+.fit-score{position:relative;overflow:hidden;background:#f6f6f4;padding:5rem 0}
+@media(min-width:768px){.fit-score{padding:6rem 0}}
+.fit-score-mesh{position:absolute;left:50%;top:0;width:700px;height:300px;transform:translateX(-50%);border-radius:9999px;background:rgba(169,210,255,.2);filter:blur(120px)}
+.fit-score-content{position:relative;max-width:42rem;margin:0 auto}
+.fit-score-header{text-align:center}
+.fit-score-card{position:relative;margin-top:2.5rem;overflow:hidden;border-radius:1.5rem;border:1px solid rgba(10,10,10,.1);background:#fff;box-shadow:0 20px 60px -20px rgba(10,10,10,.15)}
+.fit-score-progress{height:4px;width:100%;background:rgba(10,10,10,.05);overflow:hidden}
+.fit-score-progress-bar{height:100%;background:#2c64a1;transition:width .4s ease}
+.fit-score-body{padding:1.5rem}
+@media(min-width:768px){.fit-score-body{padding:2rem}}
+.fit-score-step{display:flex;align-items:center;justify-content:space-between;font-size:.6875rem;font-weight:600;text-transform:uppercase;letter-spacing:.05em;color:rgba(10,10,10,.55)}
+.fit-score-back{color:rgba(10,10,10,.4);transition:color .3s ease;background:none;border:none;cursor:pointer}
+.fit-score-back:hover{color:#0a0a0a}
+.fit-score-back:disabled{opacity:.3;cursor:not-allowed}
+.fit-score-question{margin-top:1rem;font-family:'Audiowide';font-size:1.125rem;line-height:1.3;color:#0a0a0a}
+@media(min-width:768px){.fit-score-question{font-size:1.25rem}}
+.fit-score-howto{margin-top:1rem;border-radius:.75rem;background:#f6f6f4;padding:1rem}
+.fit-score-howto-label{font-size:.6875rem;font-weight:600;text-transform:uppercase;letter-spacing:.05em;color:rgba(10,10,10,.55)}
+.fit-score-howto-text{margin-top:.375rem;font-size:.875rem;line-height:1.5;color:rgba(10,10,10,.7)}
+.fit-score-options{margin-top:1.25rem;display:grid;grid-template-columns:repeat(2,1fr);gap:.625rem}
+.fit-score-option{display:flex;flex-direction:column;align-items:flex-start;gap:.25rem;border-radius:.75rem;border:2px solid rgba(10,10,10,.1);background:#f6f6f4;padding:.875rem 1rem;text-align:left;cursor:pointer;transition:all .2s ease}
+.fit-score-option:hover{border-color:rgba(44,100,161,.4)}
+.fit-score-option.pass:hover{border-color:rgba(16,163,74,.4);background:rgba(16,163,74,.05)}
+.fit-score-option.fail:hover{border-color:rgba(220,38,38,.4);background:rgba(220,38,38,.05)}
+.fit-score-option-label{font-family:'Audiowide';font-size:1rem}
+.fit-score-option.pass .fit-score-option-label{color:#059669}
+.fit-score-option.fail .fit-score-option-label{color:#dc2626}
+.fit-score-option-hint{font-size:.6875rem;color:rgba(10,10,10,.5)}
+.fit-score-dots{margin-top:1.5rem;display:flex;align-items:center;justify-content:center;gap:.5rem}
+.fit-score-dot{height:8px;border-radius:9999px;background:rgba(10,10,10,.15);transition:all .3s ease}
+.fit-score-dot.active{width:24px;background:#2c64a1}
+.fit-score-dot.done{width:8px;background:rgba(44,100,161,.5)}
+.fit-score-disclaimer{margin-top:1rem;text-align:center;font-size:.75rem;color:rgba(10,10,10,.55)}
+
+/* ===== FIT SCORE RESULT ===== */
+.fit-result{padding:1.5rem;border-radius:.75rem;background:linear-gradient(135deg,rgba(44,100,161,.1),transparent);text-align:center}
+@media(min-width:768px){.fit-result{padding:2rem}}
+.fit-result-score{display:flex;align-items:baseline;justify-content:center;gap:.375rem}
+.fit-result-score-value{font-family:'Audiowide';font-size:3rem;color:#0a0a0a}
+@media(min-width:768px){.fit-result-score-value{font-size:3.75rem}}
+.fit-result-score-total{font-family:'Audiowide';font-size:1.5rem;color:rgba(10,10,10,.35)}
+.fit-result-score-label{font-size:.6875rem;font-weight:500;text-transform:uppercase;letter-spacing:.05em;color:rgba(10,10,10,.55)}
+.fit-result-band{margin-top:.75rem;font-family:'Audiowide';font-size:.875rem;letter-spacing:.2em}
+.fit-result-title{margin-top:1rem;font-family:'Audiowide';font-size:1.125rem;line-height:1.3;color:#0a0a0a}
+@media(min-width:768px){.fit-result-title{font-size:1.25rem}}
+.fit-result-summary{margin-top:.625rem;max-width:28rem;margin-left:auto;margin-right:auto;font-size:.875rem;line-height:1.5;color:rgba(10,10,10,.65)}
+@media(min-width:768px){.fit-result-summary{font-size:1rem}}
+.fit-result-ctas{margin-top:1.5rem;display:flex;flex-direction:column;gap:.625rem;align-items:center}
+@media(min-width:640px){.fit-result-ctas{flex-direction:row;justify-content:center}}
+
+/* ===== APPROACH ===== */
+.approach{background:#fff;padding:5rem 0}
+@media(min-width:768px){.approach{padding:6rem 0}}
+.approach-header{max-width:42rem}
+.approach-eyebrow{font-size:.6875rem;font-weight:600;text-transform:uppercase;letter-spacing:.18em;color:#2c64a1}
+.approach-grid{margin-top:2.5rem;display:grid;grid-template-columns:1fr;gap:.75rem}
+@media(min-width:640px){.approach-grid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1024px){.approach-grid{grid-template-columns:repeat(4,1fr);gap:1rem}}
+.step-card{border-radius:1rem;border:1px solid rgba(10,10,10,.1);background:#f6f6f4;padding:1.25rem;transition:all .3s ease}
+@media(min-width:768px){.step-card{padding:1.5rem}}
+.step-card:hover{border-color:rgba(44,100,161,.3);background:#fff;transform:translateY(-4px);box-shadow:0 24px 50px -20px rgba(44,100,161,.25)}
+.step-card-top{display:flex;align-items:center;justify-content:between}
+.step-card-num{font-family:'Audiowide';font-size:.75rem;letter-spacing:.1em;color:#2c64a1;font-weight:bold}
+.step-card-icon{display:flex;align-items:center;justify-content:center;width:2.25rem;height:2.25rem;border-radius:.5rem;background:rgba(169,210,255,.3);color:#2c64a1;transition:all .3s ease}
+.step-card:hover .step-card-icon{transform:scale(1.1);background:#2c64a1;color:#f6f6f4}
+.step-card-icon svg{width:18px;height:18px}
+.step-card h3{margin-top:1.25rem;font-family:'Audiowide';font-size:1.125rem;letter-spacing:.02em;color:#0a0a0a}
+@media(min-width:768px){.step-card h3{font-size:1.25rem}}
+.step-card p{margin-top:.5rem;font-size:.875rem;line-height:1.5;color:rgba(10,10,10,.55)}
+
+/* ===== CAPABILITIES ===== */
+.capabilities{border-top:1px solid rgba(10,10,10,.08);border-bottom:1px solid rgba(10,10,10,.08);background:#f6f6f4;padding:4rem 0}
+@media(min-width:768px){.capabilities{padding:5rem 0}}
+.cap-header{max-width:42rem}
+.cap-grid{margin-top:2rem;display:grid;grid-template-columns:1fr;gap:.75rem}
+@media(min-width:768px){.cap-grid{grid-template-columns:repeat(3,1fr);gap:1rem}}
+.cap-card{border-radius:1rem;border:1px solid rgba(10,10,10,.1);background:#fff;padding:1.25rem;transition:all .3s ease}
+@media(min-width:768px){.cap-card{padding:1.5rem}}
+.cap-card:hover{border-color:rgba(44,100,161,.3);transform:translateY(-4px);box-shadow:0 24px 50px -20px rgba(44,100,161,.25)}
+.cap-card-accent{height:4px;width:2.5rem;border-radius:9999px;background:rgba(44,100,161,.3)}
+.cap-card h3{margin-top:1rem;font-family:'Audiowide';font-size:1.125rem;letter-spacing:.02em;color:#0a0a0a}
+@media(min-width:768px){.cap-card h3{font-size:1.25rem}}
+.cap-card p{margin-top:.375rem;font-size:.875rem;line-height:1.5;color:rgba(10,10,10,.55)}
+.cap-card-list{margin-top:1rem;padding-top:1rem;border-top:1px solid rgba(10,10,10,.08);display:flex;flex-direction:column;gap:.375rem}
+.cap-card-list li{display:flex;align-items:center;gap:.5rem;font-size:.875rem;color:rgba(10,10,10,.7)}
+.cap-check{display:flex;align-items:center;justify-content:center;width:14px;height:14px;border-radius:9999px;background:rgba(169,210,255,.4);color:#2c64a1;font-size:8px;font-weight:bold}
+
+/* ===== ABOUT ===== */
+.about{background:#fff;padding:5rem 0}
+@media(min-width:768px){.about{padding:6rem 0}}
+.about-grid{display:grid;grid-template-columns:1fr;gap:2rem}
+@media(min-width:1024px){.about-grid{grid-template-columns:repeat(12,1fr);gap:2.5rem}}
+.about-left{position:relative}
+@media(min-width:1024px){.about-left{grid-column:span 5}}
+.about-image-card{position:relative;overflow:hidden;border-radius:1.5rem;border:1px solid rgba(10,10,10,.1);box-shadow:0 20px 50px -20px rgba(10,10,10,.2)}
+.about-image-card img{aspect-ratio:5/6;width:100%;object-fit:cover;object-position:center}
+.about-image-floating{position:absolute;bottom:-2rem;right:-1rem;width:7rem;overflow:hidden;border-radius:.75rem;border:4px solid #fff;box-shadow:0 10px 25px rgba(0,0,0,.15)}
+@media(min-width:640px){.about-image-floating{display:block}}
+@media(max-width:639px){.about-image-floating{display:none}}
+.about-image-floating img{aspect-ratio:1;width:100%;object-fit:cover}
+@media(min-width:768px){.about-image-floating{width:9rem}}
+.about-right{display:flex;flex-direction:column;justify-content:center}
+@media(min-width:1024px){.about-right{grid-column:span 7}}
+.about-text{margin-top:1.5rem;display:flex;flex-direction:column;gap:1rem;font-size:1rem;line-height:1.6;color:rgba(10,10,10,.65)}
+@media(min-width:768px){.about-text{font-size:1.125rem}}
+.about-ctas{margin-top:1.75rem;display:flex;flex-wrap:wrap;gap:.625rem}
+
+/* ===== FAQ ===== */
+.faq{background:#f6f6f4;padding:5rem 0}
+@media(min-width:768px){.faq{padding:6rem 0}}
+.faq-content{max-width:42rem;margin:0 auto}
+.faq-header{text-align:center}
+.faq-list{margin-top:2rem;display:flex;flex-direction:column;gap:.625rem}
+.faq-item{overflow:hidden;border-radius:1rem;border:1px solid rgba(10,10,10,.08);background:rgba(255,255,255,.5);transition:all .3s ease}
+.faq-item.open{border-color:rgba(10,10,10,.15);background:#fff;box-shadow:0 8px 24px -12px rgba(10,10,10,.1)}
+.faq-item:not(.open):hover{background:#fff}
+.faq-question{display:flex;align-items:center;justify-content:space-between;gap:.75rem;padding:1rem;text-align:left;width:100%;cursor:pointer}
+@media(min-width:768px){.faq-question{padding:1.25rem;gap:1rem}}
+.faq-question-text{font-family:'Audiowide';font-size:1rem;letter-spacing:.02em;transition:color .3s ease;color:#0a0a0a}
+@media(min-width:768px){.faq-question-text{font-size:1.125rem}}
+.faq-item.open .faq-question-text{color:#2c64a1}
+.faq-toggle{display:flex;align-items:center;justify-content:center;width:2.25rem;height:2.25rem;border-radius:9999px;transition:all .3s ease;background:rgba(10,10,10,.05);color:#0a0a0a;flex-shrink:0}
+@media(min-width:768px){.faq-toggle{width:2rem;height:2rem}}
+.faq-item.open .faq-toggle{background:#0a0a0a;color:#f6f6f4}
+.faq-toggle svg{width:14px;height:14px}
+.faq-answer{max-height:0;overflow:hidden;transition:max-height .3s ease,opacity .3s ease;opacity:0}
+.faq-item.open .faq-answer{opacity:1}
+.faq-answer-text{padding:0 1rem 1.25rem;font-size:.875rem;line-height:1.6;color:rgba(10,10,10,.65)}
+@media(min-width:768px){.faq-answer-text{padding:0 1.25rem 1.25rem;font-size:1rem}}
+
+/* ===== BOOKING ===== */
+.booking{position:relative;overflow:hidden;background:#0a0a0a;color:#f6f6f4;padding:5rem 0}
+@media(min-width:768px){.booking{padding:6rem 0}}
+.booking-mesh-1{position:absolute;left:-8rem;top:25%;width:400px;height:400px;border-radius:9999px;background:rgba(44,100,161,.25);filter:blur(140px);animation:mesh-drift-1 18s ease-in-out infinite}
+.booking-mesh-2{position:absolute;right:-8rem;bottom:0;width:400px;height:400px;border-radius:9999px;background:rgba(169,210,255,.1);filter:blur(140px);animation:mesh-drift-2 22s ease-in-out infinite}
+.booking-grid{position:relative;display:grid;grid-template-columns:1fr;gap:2rem}
+@media(min-width:1024px){.booking-grid{grid-template-columns:repeat(12,1fr);gap:2.5rem}}
+.booking-left{grid-column:span 1}
+@media(min-width:1024px){.booking-left{grid-column:span 5}}
+.booking-right{grid-column:span 1}
+@media(min-width:1024px){.booking-right{grid-column:span 7}}
+.booking-eyebrow{display:inline-flex;align-items:center;gap:.5rem;border-radius:9999px;border:1px solid rgba(246,246,244,.15);padding:.375rem .875rem;font-size:.6875rem;font-weight:600;text-transform:uppercase;letter-spacing:.15em;color:rgba(246,246,244,.85)}
+.booking h2{margin-top:1rem}
+.booking-subhead{margin-top:1.25rem;max-width:28rem;font-size:1rem;line-height:1.6;color:rgba(246,246,244,.65)}
+@media(min-width:768px){.booking-subhead{font-size:1.125rem}}
+.booking-list{margin-top:1.5rem;display:flex;flex-direction:column;gap:.625rem}
+.booking-list-item{display:flex;align-items:flex-start;gap:.625rem;font-size:.875rem;color:rgba(246,246,244,.8)}
+@media(min-width:768px){.booking-list-item{font-size:1rem}}
+.booking-list-item svg{width:16px;height:16px;flex-shrink:0;margin-top:2px;color:#a9d2ff}
+.booking-trust{margin-top:1.5rem;display:flex;align-items:center;gap:.75rem;border-radius:.75rem;border:1px solid rgba(246,246,244,.1);background:rgba(255,255,255,.03);padding:.875rem}
+.booking-trust-icon{display:flex;align-items:center;justify-content:center;width:2.25rem;height:2.25rem;border-radius:.5rem;background:rgba(169,210,255,.15);color:#a9d2ff;flex-shrink:0}
+.booking-trust-icon svg{width:18px;height:18px}
+.booking-trust-text{font-size:.75rem;color:rgba(246,246,244,.6)}
+.booking-trust-text strong{color:#f6f6f4;display:block}
+.booking-contact{margin-top:1.25rem;display:flex;flex-wrap:wrap;gap:.5rem}
+.booking-contact-link{display:inline-flex;align-items:center;gap:.5rem;border-radius:9999px;border:1px solid rgba(246,246,244,.15);padding:.625rem 1rem;font-size:.75rem;color:rgba(246,246,244,.85);transition:all .3s ease}
+.booking-contact-link:hover{border-color:rgba(246,246,244,.3);color:#f6f6f4}
+.booking-contact-link svg{width:14px;height:14px}
+.booking-privacy{margin-top:1.25rem;font-size:.6875rem;line-height:1.5;color:rgba(246,246,244,.6)}
+.booking-iframe-wrap{overflow:hidden;border-radius:1.5rem;border:1px solid rgba(246,246,244,.1);background:#fff;box-shadow:0 20px 60px -20px rgba(0,0,0,.4)}
+.booking-iframe-header{display:flex;align-items:center;justify-content:between;border-bottom:1px solid rgba(10,10,10,.08);background:#f6f6f4;padding:.875rem 1.25rem}
+.booking-iframe-label{display:flex;align-items:center;gap:.5rem;font-size:.75rem;font-weight:600;text-transform:uppercase;letter-spacing:.05em;color:rgba(10,10,10,.7)}
+.booking-iframe-label svg{width:14px;height:14px;color:#2c64a1}
+.booking-iframe-status{display:flex;align-items:center;gap:.375rem;font-size:.6875rem;color:rgba(10,10,10,.55)}
+.booking-iframe-status::before{content:"";width:6px;height:6px;border-radius:9999px;background:#10b981}
+.booking-iframe{width:100%;height:680px;border:none;min-height:600px}
+.booking-iframe-footer{margin-top:.75rem;display:flex;align-items:center;justify-content:space-between;gap:.75rem;border-radius:.75rem;border:1px solid rgba(246,246,244,.1);background:rgba(255,255,255,.03);padding:.625rem 1rem;font-size:.75rem;color:rgba(246,246,244,.55)}
+.booking-iframe-footer a{display:inline-flex;align-items:center;gap:.25rem;color:rgba(246,246,244,.85);transition:color .3s ease}
+.booking-iframe-footer a:hover{color:#f6f6f4}
+.booking-iframe-footer svg{width:12px;height:12px}
+
+/* ===== FOOTER ===== */
+.kaif-footer{position:relative;overflow:hidden;background:#f6f6f4}
+.footer-cta{position:relative;border-top:1px solid rgba(10,10,10,.08);background:#f6f6f4;padding:5rem 0;text-align:center}
+@media(min-width:768px){.footer-cta{padding:6rem 0}}
+.footer-cta-mesh{position:absolute;left:50%;top:50%;width:700px;height:300px;transform:translate(-50%,-50%);border-radius:9999px;background:rgba(169,210,255,.2);filter:blur(120px)}
+.footer-cta-content{position:relative;display:flex;flex-direction:column;align-items:center}
+.footer-cta-buttons{margin-top:1.75rem;display:flex;flex-direction:column;align-items:center;gap:.625rem}
+@media(min-width:640px){.footer-cta-buttons{flex-direction:row}}
+.footer-bottom{border-top:1px solid rgba(10,10,10,.08);background:#0a0a0a;padding:1.5rem 0;color:rgba(246,246,244,.6)}
+.footer-bottom-content{display:flex;flex-direction:column;align-items:center;justify-content:space-between;gap:1rem}
+@media(min-width:768px){.footer-bottom-content{flex-direction:row}}
+.footer-brand{display:flex;align-items:center;gap:.625rem}
+.footer-brand-badge{display:flex;align-items:center;justify-content:center;width:1.75rem;height:1.75rem;border-radius:9999px;background:#f6f6f4;color:#0a0a0a}
+.footer-brand-badge span{font-family:'Audiowide';font-size:.75rem}
+.footer-brand-name{font-family:'Audiowide';letter-spacing:.06em;color:#f6f6f4;font-size:.75rem}
+.footer-brand-desc{color:rgba(246,246,244,.6);font-size:.75rem}
+.footer-nav{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:1rem;font-size:.75rem}
+.footer-nav a{transition:color .3s ease}
+.footer-nav a:hover{color:#f6f6f4}
+.footer-copy{font-size:.75rem;color:rgba(246,246,244,.6)}
+
+/* ===== COOKIE NOTICE ===== */
+.cookie-notice{position:fixed;top:4rem;left:.75rem;right:.75rem;z-index:30;max-width:28rem;margin:0 auto;border-radius:1rem;border:1px solid rgba(10,10,10,.1);background:#fff;padding:.75rem;box-shadow:0 8px 32px -8px rgba(10,10,10,.15);transition:opacity .3s ease,transform .3s ease}
+@media(min-width:768px){.cookie-notice{left:1rem;right:1rem;max-width:32rem;padding:1rem}}
+.cookie-notice.hidden{opacity:0;transform:translateY(-20px);pointer-events:none}
+.cookie-notice-content{display:flex;align-items:flex-start;gap:.625rem}
+@media(min-width:768px){.cookie-notice-content{align-items:center}}
+.cookie-notice-text{flex:1;font-size:.6875rem;line-height:1.5;color:rgba(10,10,10,.65)}
+@media(min-width:768px){.cookie-notice-text{font-size:.75rem}}
+.cookie-notice-text a{color:#2c64a1;font-weight:600;text-decoration:underline}
+.cookie-notice-btn{flex-shrink:0;border-radius:9999px;background:#0a0a0a;padding:.5rem 1rem;font-size:.75rem;font-weight:600;color:#f6f6f4;transition:background .3s ease;min-height:36px}
+.cookie-notice-btn:hover{background:#2c64a1}
+
+/* ===== PRIVACY MODAL ===== */
+.privacy-modal{position:fixed;inset:0;z-index:60;display:flex;align-items:center;justify-content:center;background:rgba(10,10,10,.6);backdrop-filter:blur(4px);padding:1rem}
+.privacy-modal.hidden{display:none}
+.privacy-modal-content{max-height:80vh;overflow-y:auto;max-width:32rem;width:100%;border-radius:1rem;background:#f6f6f4;padding:1.5rem;box-shadow:0 25px 50px -12px rgba(0,0,0,.25)}
+@media(min-width:768px){.privacy-modal-content{padding:2rem}}
+.privacy-modal-header{display:flex;align-items:center;justify-content:between}
+.privacy-modal-title{font-family:'Audiowide';font-size:1.25rem;letter-spacing:.02em;color:#0a0a0a}
+.privacy-modal-close{display:flex;align-items:center;justify-content:center;width:2rem;height:2rem;border-radius:9999px;background:rgba(10,10,10,.05);color:#0a0a0a}
+.privacy-modal-close:hover{background:rgba(10,10,10,.1)}
+.privacy-modal-body{margin-top:1rem;display:flex;flex-direction:column;gap:.75rem;font-size:.875rem;line-height:1.5;color:rgba(10,10,10,.65)}
+.privacy-modal-body strong{color:#0a0a0a}
+.privacy-modal-body a{color:#2c64a1;font-weight:600;text-decoration:underline}
+
+/* ===== ICONS (inline SVG) ===== */
+.icon{display:inline-block;vertical-align:middle}
+
+/* ===== REDUCED MOTION ===== */
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+  .animate-mesh-1,.animate-mesh-2,.shine-on-hover::after{animation:none!important}
+  .glow-card:hover{transform:none!important;box-shadow:none!important}
+  .hero-headline-line{opacity:1!important;transform:none!important;animation:none!important}
+  .hero-headline-highlight::after{transform:scaleX(1) rotate(-1deg)!important;animation:none!important}
+}
+</style>
+</head>
+<body>
+
+<!-- Skip link -->
+<a href="#main-content" class="skip-link">Skip to content</a>
+
+<!-- Scroll progress -->
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<!-- Navbar -->
+<header class="kaif-header" id="navbar">
+  <div class="kaif-container">
+    <nav class="kaif-nav glass-nav" aria-label="Main navigation">
+      <a href="#top" class="kaif-logo" aria-label="Kaif Ali — home">
+        <span class="kaif-logo-badge">K</span>
+        <span class="kaif-logo-text">Kaif Ali</span>
+      </a>
+      <ul class="kaif-nav-links" id="navLinks">
+        <li><a href="#problem" class="kaif-nav-link">Problem</a></li>
+        <li><a href="#fit-score" class="kaif-nav-link">Fit Score</a></li>
+        <li><a href="#approach" class="kaif-nav-link">Approach</a></li>
+        <li><a href="#about" class="kaif-nav-link">About</a></li>
+        <li><a href="#faq" class="kaif-nav-link">FAQ</a></li>
+      </ul>
+      <div style="display:flex;align-items:center;gap:.375rem">
+        <a href="/whitelabel" class="audience-switch audience-switch-desktop"><span class="audience-switch-dot"></span>For Agencies</a>
+        <a href="#book" class="kaif-nav-cta">
+          <span style="position:relative;display:inline-flex;width:6px;height:6px">
+            <span style="position:absolute;inset:0;border-radius:9999px;background:#a9d2ff;animation:ping 1.5s cubic-bezier(0,0,.2,1) infinite"></span>
+            <span style="position:relative;display:inline-flex;width:6px;height:6px;border-radius:9999px;background:#a9d2ff"></span>
+          </span>
+          Book Fit Call
+        </a>
+        <button class="kaif-menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false">
+          <div class="kaif-menu-icon"><span></span><span></span><span></span></div>
+        </button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<!-- Mobile menu -->
+<div class="mobile-menu hidden" id="mobileMenu">
+  <div class="mobile-menu-backdrop" id="menuBackdrop"></div>
+  <div class="mobile-menu-panel">
+    <ul>
+      <li><a href="#problem" class="mobile-menu-link">Problem</a></li>
+      <li><a href="#fit-score" class="mobile-menu-link">Fit Score</a></li>
+      <li><a href="#approach" class="mobile-menu-link">Approach</a></li>
+      <li><a href="#about" class="mobile-menu-link">About</a></li>
+      <li><a href="#faq" class="mobile-menu-link">FAQ</a></li>
+    </ul>
+    <a href="#book" class="mobile-menu-cta">Book Fit Call</a>
+    <a href="/whitelabel" class="mobile-audience-switch">For Agencies →</a>
+  </div>
+</div>
+
+<main id="main-content">
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="bg-grid" style="position:absolute;inset:0;opacity:.6;pointer-events:none"></div>
+  <div style="position:absolute;left:-8rem;top:5rem;width:400px;height:400px;border-radius:9999px;background:rgba(169,210,255,.2);filter:blur(120px);pointer-events:none"></div>
+  <div class="kaif-container" style="position:relative">
+    <div class="hero-grid">
+      <div class="hero-left">
+        <div class="eyebrow">
+          <span class="eyebrow-dot"></span>
+          <span id="heroEyebrow">Now booking Fit Calls</span>
+        </div>
+        <h1 class="h-hero">
+          <span class="hero-headline-line">Your website</span>
+          <span class="hero-headline-line">has a <span class="hero-headline-highlight">job title</span>.</span>
+          <span class="hero-headline-line" style="color:rgba(10,10,10,.55)">Not the job.</span>
+        </h1>
+        <p class="hero-subhead">
+          I'm <strong style="color:#0a0a0a">Kaif Ali</strong>. For 7 years I've built B2C service business websites that actually do their job — clearer, faster, and built to support real outcomes.
+        </p>
+        <div class="hero-stats">
+          <div class="hero-stat"><span class="hero-stat-value">7</span><span class="hero-stat-suffix">yrs</span><span class="hero-stat-label">in the trenches</span></div>
+          <div class="hero-stat-divider"></div>
+          <div class="hero-stat"><span class="hero-stat-value">500</span><span class="hero-stat-suffix">+</span><span class="hero-stat-label">sites reviewed</span></div>
+          <div class="hero-stat-divider"></div>
+          <div class="hero-stat"><span class="hero-stat-value">200</span><span class="hero-stat-suffix">+</span><span class="hero-stat-label">projects shipped</span></div>
+        </div>
+        <div class="hero-ctas">
+          <a href="#book" class="btn-primary shine-on-hover">Book your Fit Call <svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7V16"/></svg></a>
+          <a href="#fit-score" class="btn-secondary">Score my site in 60s <svg class="icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M19 12l-7 7-7-7"/></svg></a>
+        </div>
+        <p class="hero-risk">Free 15-min call · No pitch, just a honest read on your site</p>
+        <div class="hero-social">
+          <div class="hero-stars">
+            <svg class="hero-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg class="hero-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg class="hero-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg class="hero-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg class="hero-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <span>Trusted by agencies & founders across 6 countries</span>
+        </div>
+      </div>
+      <div class="hero-right">
+        <div class="hero-image-wrap">
+          <div class="hero-image-card">
+            <img src="https://kaif.selvinx.com/wp-content/uploads/2026/06/kaif-ali-1-1.webp" alt="Kaif Ali — Lead Web Developer">
+            <div class="hero-image-badge">
+              <div>
+                <div class="hero-image-badge-name">Kaif Ali</div>
+                <div class="hero-image-badge-role">Lead Web Developer</div>
+              </div>
+              <span class="hero-image-badge-status">Available</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Scroll indicator -->
+    <div style="position:absolute;bottom:1.25rem;left:50%;transform:translateX(-50%);display:none;flex-direction:column;align-items:center;gap:.25rem;color:rgba(10,10,10,.4);cursor:pointer" class="scroll-cue" onclick="document.getElementById('trust').scrollIntoView({behavior:'smooth'})">
+      <span style="font-family:'Manrope';font-size:.625rem;text-transform:uppercase;letter-spacing:.2em">Scroll</span>
+      <span style="display:flex;width:1.25rem;height:2.25rem;align-items:flex-start;justify-content:center;border:1px solid rgba(10,10,10,.2);border-radius:9999px;padding:.25rem">
+        <span style="width:.25rem;height:.25rem;border-radius:9999px;background:rgba(10,10,10,.5);animation:scroll-dot 1.6s ease-in-out infinite"></span>
+      </span>
+    </div>
+    <style>@media(min-width:768px){.scroll-cue{display:flex}}@keyframes scroll-dot{0%,100%{transform:translateY(0);opacity:1}50%{transform:translateY(8px);opacity:.3}}</style>
+  </div>
+</section>
+<section class="trust" id="trust">
+  <div class="kaif-container">
+    <div class="trust-header reveal">
+      <h2 class="h-section" style="max-width:36rem;color:#0a0a0a">Trusted by agencies<br>& founder-led teams</h2>
+      <p style="max-width:20rem;font-size:.875rem;color:rgba(10,10,10,.55)">Built and led website delivery across marketing agencies, service businesses, and growing companies.</p>
+    </div>
+    <div class="trust-grid" id="statsGrid">
+      <div class="stat-card stagger-item"><div><span class="stat-value" data-target="7">0</span><span class="stat-suffix">yrs</span></div><div class="stat-label">in the trenches</div></div>
+      <div class="stat-card stagger-item"><div><span class="stat-value" data-target="500">0</span><span class="stat-suffix">+</span></div><div class="stat-label">sites reviewed</div></div>
+      <div class="stat-card stagger-item"><div><span class="stat-value" data-target="200">0</span><span class="stat-suffix">+</span></div><div class="stat-label">projects delivered</div></div>
+      <div class="stat-card stagger-item"><div><span class="stat-value" data-target="8">0</span></div><div class="stat-label">teams partnered</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEM -->
+<section class="problem" id="problem">
+  <div class="bg-grid-dark" style="position:absolute;inset:0;opacity:.5;pointer-events:none"></div>
+  <div class="problem-mesh-1" aria-hidden="true"></div>
+  <div class="problem-mesh-2" aria-hidden="true"></div>
+  <div class="kaif-container" style="position:relative;max-width:56rem">
+    <div style="max-width:42rem">
+      <div class="problem-eyebrow reveal">
+        <svg class="icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        The pattern I keep seeing
+      </div>
+      <h2 class="h-section text-balance reveal" style="margin-top:1rem">A business can be <span style="color:#a9d2ff">genuinely good</span> — and its website can still do a poor job.</h2>
+      <p class="problem-subhead reveal">After 7 years and 500+ sites reviewed, one thing is hard to ignore: most website problems aren't really design problems. They're <strong style="color:#f6f6f4">thinking problems</strong>.</p>
+    </div>
+    <div class="problem-cards" id="problemCards">
+      <div class="problem-card stagger-item">
+        <div class="problem-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9.88 9.88a3 3 0 104.24 4.24"/><path d="M10.73 5.08A10.43 10.43 0 0112 5c7 0 10 7 10 7a13.16 13.16 0 01-1.67 2.68"/><path d="M6.61 6.61A13.526 13.526 0 002 12s3 7 10 7a9.74 9.74 0 005.39-1.61"/><line x1="2" y1="2" x2="22" y2="22"/></svg></div>
+        <h3>Business not clearly explained</h3>
+        <p>Visitors land, look around, and still don't know what you actually do.</p>
+      </div>
+      <div class="problem-card stagger-item">
+        <div class="problem-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+        <h3>Looks fine, performs poorly</h3>
+        <p>It might look expensive. Strip away the design and the structure isn't helping.</p>
+      </div>
+      <div class="problem-card stagger-item">
+        <div class="problem-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg></div>
+        <h3>Needs a developer to change a sentence</h3>
+        <p>Every small update becomes a ticket. The site has a job title, not the job.</p>
+      </div>
+    </div>
+    <div class="problem-cta reveal">
+      <p class="problem-cta-text">No ghosting. No missed deadlines.<br><span style="color:#a9d2ff">Just reliable dev that ships.</span></p>
+      <a href="#fit-score" class="problem-cta-link">See if yours is one of them <span style="color:#2c64a1">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- FIT SCORE -->
+<section class="fit-score" id="fit-score">
+  <div class="bg-grid" style="position:absolute;inset:0;opacity:.5;pointer-events:none"></div>
+  <div class="fit-score-mesh" aria-hidden="true"></div>
+  <div class="kaif-container" style="position:relative;max-width:42rem">
+    <div class="fit-score-header reveal">
+      <div class="eyebrow" style="margin:0 auto">
+        <svg class="icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l1.09 3.26L16 6l-3 2 1 4-3-2-3 2 1-4-3-2 2.91-1.74L12 2z"/></svg>
+        90-second site check
+      </div>
+      <h2 class="h-section" style="margin-top:1rem;color:#0a0a0a">Run these 6 checks<br>on your own site.</h2>
+      <p style="margin-top:.75rem;max-width:28rem;margin-left:auto;margin-right:auto;font-size:.875rem;color:rgba(10,10,10,.55)">Objective checks you can verify yourself. No email required.</p>
+    </div>
+    <div class="fit-score-card reveal">
+      <div class="fit-score-progress"><div class="fit-score-progress-bar" id="quizProgress" style="width:0%"></div></div>
+      <div class="fit-score-body" id="quizBody">
+        <!-- Quiz content injected by JS -->
+      </div>
+    </div>
+    <p class="fit-score-disclaimer">Objective self-check, not a full audit. The real diagnosis happens on the Fit Call.</p>
+  </div>
+</section>
+
+<!-- APPROACH -->
+<section class="approach" id="approach">
+  <div class="kaif-container">
+    <div class="approach-header reveal">
+      <div class="approach-eyebrow">My approach</div>
+      <h2 class="h-section" style="margin-top:.75rem;color:#0a0a0a">How I work. Four moves.</h2>
+    </div>
+    <div class="approach-grid" id="approachGrid">
+      <div class="step-card stagger-item">
+        <div style="display:flex;align-items:center;justify-content:space-between">
+          <span class="step-card-num">01</span>
+          <div class="step-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
+        </div>
+        <h3>Understand</h3>
+        <p>Get clear on the business. Who's the customer, what's the offer, what action the site needs to drive.</p>
+      </div>
+      <div class="step-card stagger-item">
+        <div style="display:flex;align-items:center;justify-content:space-between">
+          <span class="step-card-num">02</span>
+          <div class="step-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg></div>
+        </div>
+        <h3>Simplify</h3>
+        <p>Cut what doesn't earn its place. Make the important stuff obvious in 5 seconds.</p>
+      </div>
+      <div class="step-card stagger-item">
+        <div style="display:flex;align-items:center;justify-content:space-between">
+          <span class="step-card-num">03</span>
+          <div class="step-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg></div>
+        </div>
+        <h3>Build</h3>
+        <p>Built on WordPress, structured for the long term. Fast, maintainable, editable by your team.</p>
+      </div>
+      <div class="step-card stagger-item">
+        <div style="display:flex;align-items:center;justify-content:space-between">
+          <span class="step-card-num">04</span>
+          <div class="step-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        </div>
+        <h3>Own</h3>
+        <p>Documentation, training, and a system your team can run. No babysitting required.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CAPABILITIES -->
+<section class="capabilities" id="capabilities">
+  <div class="kaif-container">
+    <div class="cap-header reveal">
+      <div class="approach-eyebrow">Skills & services</div>
+      <h2 class="h-section" style="margin-top:.75rem;color:#0a0a0a">What I bring to the table.</h2>
+    </div>
+    <div class="cap-grid" id="capGrid">
+      <div class="cap-card stagger-item">
+        <div class="cap-card-accent"></div>
+        <h3>Strategy & UX</h3>
+        <p>Structure before pixels. The thinking that makes the rest work.</p>
+        <ul class="cap-card-list">
+          <li><span class="cap-check">✓</span> Conversion-focused layouts</li>
+          <li><span class="cap-check">✓</span> Information architecture</li>
+          <li><span class="cap-check">✓</span> Trust-driven page structure</li>
+          <li><span class="cap-check">✓</span> Wireframing</li>
+        </ul>
+      </div>
+      <div class="cap-card stagger-item">
+        <div class="cap-card-accent"></div>
+        <h3>Development</h3>
+        <p>Built on WordPress. Fast, maintainable, editable by your team.</p>
+        <ul class="cap-card-list">
+          <li><span class="cap-check">✓</span> WordPress development</li>
+          <li><span class="cap-check">✓</span> Responsive development</li>
+          <li><span class="cap-check">✓</span> Speed optimization</li>
+          <li><span class="cap-check">✓</span> Technical SEO</li>
+          <li><span class="cap-check">✓</span> Ongoing maintenance</li>
+        </ul>
+      </div>
+      <div class="cap-card stagger-item">
+        <div class="cap-card-accent"></div>
+        <h3>Brand & Trust</h3>
+        <p>Consistency across every page. The stuff that builds trust fast.</p>
+        <ul class="cap-card-list">
+          <li><span class="cap-check">✓</span> Brand consistency</li>
+          <li><span class="cap-check">✓</span> Visual identity</li>
+          <li><span class="cap-check">✓</span> Messaging & positioning</li>
+          <li><span class="cap-check">✓</span> First-impression design</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="kaif-container">
+    <div class="about-grid">
+      <div class="about-left reveal">
+        <div class="about-image-card">
+          <img src="https://kaif.selvinx.com/wp-content/uploads/2026/03/kaif-ali-15-1-1-scaled.webp" alt="Kaif Ali — working on a website project">
+        </div>
+        <div class="about-image-floating">
+          <img src="https://kaif.selvinx.com/wp-content/uploads/2026/03/image-9.webp" alt="Kaif Ali at his desk">
+        </div>
+      </div>
+      <div class="about-right reveal">
+        <div class="approach-eyebrow">About me</div>
+        <h2 class="h-section" style="margin-top:.75rem;color:#0a0a0a">Built for owners tired<br>of babysitting<br><span class="text-gradient-brand">their website.</span></h2>
+        <div class="about-text">
+          <p>I've spent the last 7 years living more inside websites than most people ever will. Building them. Fixing them. Improving them. Delivered 200+ projects and led website delivery for marketing agencies in the B2C service space.</p>
+          <p>I care about creating websites that communicate clearly, build trust, and support real business outcomes. Not the usual website talk. Not pretty-for-the-sake-of-it. Just websites that actually do their job.</p>
+        </div>
+        <div class="about-ctas">
+          <a href="#book" class="btn-primary">Book a Fit Call <span>→</span></a>
+          <a href="https://www.linkedin.com/in/kaif-ali" target="_blank" rel="noopener" class="booking-contact-link" style="border-color:rgba(10,10,10,.15);background:#fff;color:rgba(10,10,10,.7)">LinkedIn ↗</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <div class="kaif-container">
+    <div class="faq-content">
+      <div class="faq-header reveal">
+        <div class="eyebrow" style="margin:0 auto">FAQ</div>
+        <h2 class="h-section" style="margin-top:1rem;color:#0a0a0a">Questions that<br>usually come up.</h2>
+      </div>
+      <div class="faq-list" id="faqList">
+        <div class="faq-item open">
+          <button class="faq-question" aria-expanded="true">
+            <span class="faq-question-text">What exactly is a Fit Call?</span>
+            <span class="faq-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+          </button>
+          <div class="faq-answer"><div class="faq-answer-text">A 15-minute conversation where we look at your current website together, talk through what's working and what isn't, and decide if there's a real fit to work together. It's a diagnosis, not a sales pitch. You'll leave with clarity either way.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span class="faq-question-text">Is the Fit Call free?</span>
+            <span class="faq-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+          </button>
+          <div class="faq-answer"><div class="faq-answer-text">Yes. The call itself is free. I'd rather spend 15 minutes helping you see your site clearly than pitch you something you don't need. If there's a fit, we'll talk about next steps. If there isn't, you still walk away with a clearer picture.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span class="faq-question-text">Do you build from scratch or fix existing sites?</span>
+            <span class="faq-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+          </button>
+          <div class="faq-answer"><div class="faq-answer-text">Both. A lot of my work is rebuilding B2C service business websites that 'look fine but aren't doing their job.' Sometimes that's a full rebuild on WordPress. Sometimes it's a strategic restructure of what you already have. The Fit Call is where we figure out which.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span class="faq-question-text">What kind of businesses do you work with?</span>
+            <span class="faq-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+          </button>
+          <div class="faq-answer"><div class="faq-answer-text">B2C service businesses — agencies, local service providers, founder-led teams, and growing companies that rely on their website to drive real business outcomes. If your website is supposed to bring in customers (not just exist), we're probably a fit.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span class="faq-question-text">I've worked with agencies before and got burned. How is this different?</span>
+            <span class="faq-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+          </button>
+          <div class="faq-answer"><div class="faq-answer-text">You're not hiring an account manager who hands off to a junior dev. You're working directly with the person who builds, ships, and owns the work. No layers. No babysitting. The site gets built right the first time and your team can actually run it after.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span class="faq-question-text">What's your typical timeline?</span>
+            <span class="faq-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+          </button>
+          <div class="faq-answer"><div class="faq-answer-text">Most marketing-site builds land between 2–5 weeks depending on scope. Landing pages and restructures can be faster. After the Fit Call, you'll get a clear timeline with milestones — no vague 'we'll get to it when we get to it.'</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span class="faq-question-text">Can I see examples of your work?</span>
+            <span class="faq-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+          </button>
+          <div class="faq-answer"><div class="faq-answer-text">Most of my work has been delivered under agency partnerships or directly for clients, so I don't display it publicly. On the Fit Call, I'll share relevant examples that match your situation so you can judge the work, not the marketing around it.</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BOOKING -->
+<section class="booking" id="book">
+  <div class="bg-grid-dark" style="position:absolute;inset:0;opacity:.5;pointer-events:none"></div>
+  <div class="booking-mesh-1" aria-hidden="true"></div>
+  <div class="booking-mesh-2" aria-hidden="true"></div>
+  <div class="kaif-container" style="position:relative">
+    <div class="booking-grid">
+      <div class="booking-left reveal">
+        <div class="booking-eyebrow">
+          <span style="position:relative;display:inline-flex;width:6px;height:6px">
+            <span style="position:absolute;inset:0;border-radius:9999px;background:#a9d2ff;animation:ping 1.5s cubic-bezier(0,0,.2,1) infinite"></span>
+            <span style="position:relative;display:inline-flex;width:6px;height:6px;border-radius:9999px;background:#a9d2ff"></span>
+          </span>
+          <span id="bookingEyebrow">Now booking Fit Calls</span>
+        </div>
+        <h2 class="h-section">Book your<br><span style="color:#a9d2ff">Fit Call.</span></h2>
+        <p class="booking-subhead">15 minutes. We look at your site together, talk through what's working and what isn't, and decide if there's a real fit to work together.</p>
+        <div class="booking-list">
+          <div class="booking-list-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> Honest read on where your site stands today</div>
+          <div class="booking-list-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> Top 3 friction points, pointed out live</div>
+          <div class="booking-list-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> Clear next steps — whether we work together or not</div>
+        </div>
+        <div class="booking-trust">
+          <div class="booking-trust-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="8.5" cy="7" r="4"/><polyline points="17 11 19 13 23 9"/></svg></div>
+          <div class="booking-trust-text"><strong>7 years · 500+ sites reviewed</strong>You'll talk to Kaif directly.</div>
+        </div>
+        <div class="booking-contact">
+          <a href="mailto:kaif@selvinx.com" class="booking-contact-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg> kaif@selvinx.com</a>
+        </div>
+        <p class="booking-privacy">Booking handled by Selvinx. Your details go directly to Kaif — not stored on this page. You'll get an instant confirmation with the meeting link.</p>
+      </div>
+      <div class="booking-right reveal">
+        <div class="booking-iframe-wrap">
+          <div class="booking-iframe-header">
+            <div class="booking-iframe-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Pick a time</div>
+            <div class="booking-iframe-status">Live calendar</div>
+          </div>
+          <iframe src="https://selvinx.com/?fluent-booking=calendar&host=selvinx&event=30min-3" title="Book your Fit Call — Selvinx calendar" class="booking-iframe" loading="lazy" aria-label="Booking calendar"></iframe>
+        </div>
+        <div class="booking-iframe-footer">
+          <span>Showing real, up-to-date availability.</span>
+          <a href="https://selvinx.com/?fluent-booking=calendar&host=selvinx&event=30min-3" target="_blank" rel="noopener">Open in new tab <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="kaif-footer">
+  <div class="footer-cta">
+    <div class="bg-grid" style="position:absolute;inset:0;opacity:.5;pointer-events:none"></div>
+    <div class="footer-cta-mesh" aria-hidden="true"></div>
+    <div class="kaif-container" style="position:relative">
+      <div class="footer-cta-content reveal">
+        <div class="eyebrow" style="margin:0 auto">
+          <span style="position:relative;display:inline-flex;width:6px;height:6px">
+            <span style="position:absolute;inset:0;border-radius:9999px;background:#2c64a1;animation:ping 1.5s cubic-bezier(0,0,.2,1) infinite"></span>
+            <span style="position:relative;display:inline-flex;width:6px;height:6px;border-radius:9999px;background:#2c64a1"></span>
+          </span>
+          Your move
+        </div>
+        <h2 class="h-section" style="margin-top:1.25rem;color:#0a0a0a">Your website should be<br><span class="text-gradient-brand">working harder</span><br>than this.</h2>
+        <p style="margin-top:1.25rem;max-width:28rem;font-size:1rem;color:rgba(10,10,10,.6)">15 minutes. Honest read on where your site stands. Clear next steps either way.</p>
+        <div class="footer-cta-buttons">
+          <a href="#book" class="btn-primary shine-on-hover">Book your Fit Call <svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></a>
+          <a href="#fit-score" class="btn-secondary">Score my site first →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="kaif-container">
+      <div class="footer-bottom-content">
+        <div class="footer-brand">
+          <span class="footer-brand-badge"><span>K</span></span>
+          <div>
+            <div class="footer-brand-name">Kaif Ali</div>
+            <div class="footer-brand-desc">B2C Service Business Websites</div>
+          </div>
+        </div>
+        <nav class="footer-nav" aria-label="Footer">
+          <a href="mailto:kaif@selvinx.com">kaif@selvinx.com</a>
+          <a href="https://www.linkedin.com/in/kaif-ali" target="_blank" rel="noopener">LinkedIn ↗</a>
+          <a href="/whitelabel">For Agencies ↗</a>
+          <button id="privacyBtn" style="background:none;border:none;color:inherit;font-size:inherit;cursor:pointer;padding:0">Privacy</button>
+        </nav>
+        <div class="footer-copy">© <span id="year"></span> Kaif Ali</div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Cookie notice -->
+<div class="cookie-notice hidden" id="cookieNotice" role="dialog" aria-label="Cookie notice">
+  <div class="cookie-notice-content">
+    <p class="cookie-notice-text">This page embeds a booking calendar (Selvinx). No tracking pixels. <button id="privacyLink" style="background:none;border:none;color:#2c64a1;font-weight:600;text-decoration:underline;cursor:pointer;padding:0;font-size:inherit">Privacy</button></p>
+    <button class="cookie-notice-btn" id="cookieDismiss">Got it</button>
+  </div>
+</div>
+
+<!-- Privacy modal -->
+<div class="privacy-modal hidden" id="privacyModal" role="dialog" aria-modal="true" aria-label="Privacy notice">
+  <div class="privacy-modal-content">
+    <div class="privacy-modal-header">
+      <h2 class="privacy-modal-title">Privacy</h2>
+      <button class="privacy-modal-close" id="privacyClose" aria-label="Close privacy notice">✕</button>
+    </div>
+    <div class="privacy-modal-body">
+      <p><strong>What we collect:</strong> This page itself does not store any personal data. The Fit Score Calculator runs entirely in your browser — your answers never leave your device.</p>
+      <p><strong>Booking:</strong> When you book a Fit Call, the booking is handled by Selvinx (selvinx.com). Your name, email, and selected time are processed by Selvinx to schedule and confirm your appointment. Kaif receives these details directly.</p>
+      <p><strong>Analytics:</strong> This page does not currently run third-party analytics or tracking pixels.</p>
+      <p><strong>Accessibility:</strong> This page aims to meet WCAG 2.1 AA. If you encounter a barrier, email <a href="mailto:kaif@selvinx.com">kaif@selvinx.com</a>.</p>
+      <p><strong>Contact:</strong> Questions about your data? Email <a href="mailto:kaif@selvinx.com">kaif@selvinx.com</a>.</p>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  // ===== CURRENT MONTH =====
+  var month = new Date().toLocaleString('en-US', {month:'long'});
+  var eb1 = document.getElementById('heroEyebrow');
+  var eb2 = document.getElementById('bookingEyebrow');
+  if(eb1) eb1.textContent = 'Now booking ' + month + ' Fit Calls';
+  if(eb2) eb2.textContent = 'Now booking ' + month + ' Fit Calls';
+
+  // ===== YEAR =====
+  var y = document.getElementById('year');
+  if(y) y.textContent = new Date().getFullYear();
+
+  // ===== SCROLL PROGRESS =====
+  var sp = document.getElementById('scrollProgress');
+  function updateProgress(){
+    var max = document.documentElement.scrollHeight - window.innerHeight;
+    var p = max > 0 ? window.scrollY / max : 0;
+    sp.style.transform = 'scaleX(' + p + ')';
+  }
+  window.addEventListener('scroll', updateProgress, {passive:true});
+  updateProgress();
+
+  // ===== NAVBAR SCROLLED =====
+  var header = document.getElementById('navbar');
+  function onScroll(){
+    if(window.scrollY > 24) header.classList.add('scrolled');
+    else header.classList.remove('scrolled');
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+
+  // ===== NAV SCROLL SPY =====
+  var navLinks = document.querySelectorAll('.kaif-nav-link');
+  var sections = ['problem','fit-score','approach','about','faq'];
+  function spy(){
+    var current = '';
+    for(var i=0;i<sections.length;i++){
+      var el = document.getElementById(sections[i]);
+      if(!el) continue;
+      var rect = el.getBoundingClientRect();
+      if(rect.top <= 140 && rect.bottom >= 140){ current = sections[i]; break; }
+    }
+    navLinks.forEach(function(l){
+      l.classList.toggle('active', l.getAttribute('href') === '#' + current);
+    });
+  }
+  window.addEventListener('scroll', spy, {passive:true});
+
+  // ===== SMOOTH SCROLL =====
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){
+    a.addEventListener('click', function(e){
+      var href = a.getAttribute('href');
+      if(href === '#' || href.length < 2) return;
+      var el = document.querySelector(href);
+      if(el){
+        e.preventDefault();
+        var top = el.offsetTop - 80;
+        window.scrollTo({top:top, behavior:'smooth'});
+        closeMenu();
+      }
+    });
+  });
+
+  // ===== MOBILE MENU =====
+  var menuBtn = document.getElementById('menuBtn');
+  var mobileMenu = document.getElementById('mobileMenu');
+  var backdrop = document.getElementById('menuBackdrop');
+  function openMenu(){
+    mobileMenu.classList.remove('hidden');
+    mobileMenu.classList.add('visible');
+    menuBtn.setAttribute('aria-expanded','true');
+    menuBtn.setAttribute('aria-label','Close menu');
+  }
+  function closeMenu(){
+    mobileMenu.classList.add('hidden');
+    mobileMenu.classList.remove('visible');
+    menuBtn.setAttribute('aria-expanded','false');
+    menuBtn.setAttribute('aria-label','Open menu');
+  }
+  menuBtn.addEventListener('click', function(){
+    if(mobileMenu.classList.contains('visible')) closeMenu();
+    else openMenu();
+  });
+  backdrop.addEventListener('click', closeMenu);
+
+  // ===== REVEAL ON SCROLL =====
+  var revealObs = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){
+        e.target.classList.add('visible');
+        revealObs.unobserve(e.target);
+      }
+    });
+  }, {threshold:0.1, rootMargin:'-60px'});
+  document.querySelectorAll('.reveal, .stagger-item').forEach(function(el){
+    revealObs.observe(el);
+  });
+
+  // ===== STAT COUNTERS =====
+  var statObs = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){
+        var el = e.target;
+        var target = parseInt(el.getAttribute('data-target'));
+        var start = performance.now();
+        var dur = 1200;
+        function tick(t){
+          var p = Math.min((t-start)/dur, 1);
+          var eased = 1 - Math.pow(1-p, 3);
+          el.textContent = Math.round(target * eased);
+          if(p < 1) requestAnimationFrame(tick);
+        }
+        requestAnimationFrame(tick);
+        statObs.unobserve(el);
+      }
+    });
+  }, {threshold:0.5});
+  document.querySelectorAll('[data-target]').forEach(function(el){ statObs.observe(el); });
+
+  // ===== FAQ ACCORDION =====
+  document.querySelectorAll('.faq-item').forEach(function(item){
+    var btn = item.querySelector('.faq-question');
+    var answer = item.querySelector('.faq-answer');
+    btn.addEventListener('click', function(){
+      var isOpen = item.classList.contains('open');
+      // Close all
+      document.querySelectorAll('.faq-item').forEach(function(other){
+        other.classList.remove('open');
+        other.querySelector('.faq-question').setAttribute('aria-expanded','false');
+        other.querySelector('.faq-answer').style.maxHeight = '0';
+      });
+      // Open this one if it was closed
+      if(!isOpen){
+        item.classList.add('open');
+        btn.setAttribute('aria-expanded','true');
+        answer.style.maxHeight = answer.scrollHeight + 'px';
+      }
+    });
+  });
+  // Open first by default
+  var firstFaq = document.querySelector('.faq-item.open .faq-answer');
+  if(firstFaq) firstFaq.style.maxHeight = firstFaq.scrollHeight + 'px';
+
+  // ===== FIT SCORE CALCULATOR =====
+  var CHECKS = [
+    {id:'clarity', prompt:'A stranger can tell what you do in 5 seconds', howTo:'Open your homepage. Set a 5-second timer. Can a first-time visitor name your service before the timer ends?', passHint:'Headline says what you do', failHint:'Vague tagline or jargon'},
+    {id:'answers', prompt:'Your top 3 buyer questions are answered on the page', howTo:'List the 3 questions customers ask you most. Are the answers visible without scrolling past 2 screens?', passHint:'Pricing, process, timing visible', failHint:'Buried in FAQ or missing'},
+    {id:'mobile', prompt:'Loads in under 3 seconds on a phone', howTo:'Open your site on your phone with wifi off. Count the seconds until it is usable. Over 3 = fail.', passHint:'Loads fast on cellular', failHint:'Takes 4+ seconds'},
+    {id:'cta', prompt:'Every page has ONE clear next step', howTo:'Visit your homepage and a service page. On each, what is the single action you want? If 3+ buttons compete, it fails.', passHint:'One obvious CTA per page', failHint:'Multiple competing buttons'},
+    {id:'trust', prompt:'A first-time visitor would trust you enough to reach out', howTo:'Pretend you have never heard of your business. Within 30 seconds, can you find proof of work, a real person, and a way to contact a human?', passHint:'Proof, people, contact visible', failHint:'Anonymous, no proof'},
+    {id:'edit', prompt:'Your team can update a headline without a developer', howTo:'Could your marketing lead change a homepage headline today without filing a dev ticket? If no, it fails.', passHint:'Editable by non-devs', failHint:'Every change needs a dev'}
+  ];
+  var BANDS = [
+    {min:5, max:6, band:'STRONG', title:'Your site is doing its job.', summary:'You are in the top 10%. A Fit Call will surface the 1-2 leverage points that turn a good site into a quietly excellent one.', tone:'#16a34a', cta:'Book Fit Call — sharpen the edges'},
+    {min:4, max:4, band:'SOLID', title:'Solid foundation. Money left on the table.', summary:'You are above average but a few specific fixes would compound. The Fit Call will map the gaps and prioritize what to ship first.', tone:'#2c64a1', cta:'Book Fit Call — find the gaps'},
+    {min:2, max:3, band:'UNDERPERFORMING', title:'Your site is underperforming.', summary:'This is the most common band. The good news: the fixes are usually structural, not aesthetic. The Fit Call will give you a clear roadmap.', tone:'#b45309', cta:'Book Fit Call — get the roadmap'},
+    {min:0, max:1, band:'AT RISK', title:'Your site is working against you.', summary:'Every day it stays like this costs you. The Fit Call is the fastest way to understand exactly what is broken and what to do first.', tone:'#b91c1c', cta:'Book Fit Call — stop the bleed'}
+  ];
+
+  var quizStep = 0;
+  var quizAnswers = {};
+  var quizBody = document.getElementById('quizBody');
+  var quizProgress = document.getElementById('quizProgress');
+
+  function renderQuiz(){
+    if(quizStep >= CHECKS.length){
+      renderResult();
+      return;
+    }
+    var c = CHECKS[quizStep];
+    var progress = (quizStep / CHECKS.length) * 100;
+    quizProgress.style.width = progress + '%';
+    var dots = '';
+    for(var i=0;i<CHECKS.length;i++){
+      if(i === quizStep) dots += '<span class="fit-score-dot active"></span>';
+      else if(i < quizStep) dots += '<span class="fit-score-dot done"></span>';
+      else dots += '<span class="fit-score-dot"></span>';
+    }
+    quizBody.innerHTML = '' +
+      '<div class="fit-score-step">' +
+        '<span>Check ' + (quizStep+1) + ' of ' + CHECKS.length + '</span>' +
+        '<button class="fit-score-back" ' + (quizStep === 0 ? 'disabled' : '') + ' id="quizBack">← Back</button>' +
+      '</div>' +
+      '<h3 class="fit-score-question">' + c.prompt + '</h3>' +
+      '<div class="fit-score-howto"><div class="fit-score-howto-label">How to check</div><p class="fit-score-howto-text">' + c.howTo + '</p></div>' +
+      '<div class="fit-score-options">' +
+        '<button class="fit-score-option pass" data-val="true"><span class="fit-score-option-label">Pass</span><span class="fit-score-option-hint">' + c.passHint + '</span></button>' +
+        '<button class="fit-score-option fail" data-val="false"><span class="fit-score-option-label">Fail</span><span class="fit-score-option-hint">' + c.failHint + '</span></button>' +
+      '</div>' +
+      '<div class="fit-score-dots">' + dots + '</div>';
+
+    document.querySelectorAll('.fit-score-option').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        quizAnswers[c.id] = btn.getAttribute('data-val') === 'true';
+        setTimeout(function(){ quizStep++; renderQuiz(); }, 280);
+      });
+    });
+    var back = document.getElementById('quizBack');
+    if(back) back.addEventListener('click', function(){ if(quizStep > 0){ quizStep--; renderQuiz(); } });
+  }
+
+  function renderResult(){
+    quizProgress.style.width = '100%';
+    var passed = 0;
+    for(var k in quizAnswers){ if(quizAnswers[k]) passed++; }
+    var band = BANDS.find(function(b){ return passed >= b.min && passed <= b.max; }) || BANDS[BANDS.length-1];
+    quizBody.innerHTML = '' +
+      '<div class="fit-result">' +
+        '<div class="fit-result-score"><span class="fit-result-score-value">' + passed + '</span><span class="fit-result-score-total">/ ' + CHECKS.length + '</span></div>' +
+        '<div class="fit-result-score-label">checks passed</div>' +
+        '<div class="fit-result-band" style="color:' + band.tone + '">' + band.band + '</div>' +
+        '<h3 class="fit-result-title">' + band.title + '</h3>' +
+        '<p class="fit-result-summary">' + band.summary + '</p>' +
+        '<div class="fit-result-ctas">' +
+          '<a href="#book" class="btn-primary">' + band.cta + ' →</a>' +
+          '<button class="btn-secondary" id="retakeBtn">Retake</button>' +
+        '</div>' +
+      '</div>';
+    var retake = document.getElementById('retakeBtn');
+    if(retake) retake.addEventListener('click', function(){ quizStep = 0; quizAnswers = {}; renderQuiz(); });
+  }
+
+  renderQuiz();
+
+  // ===== COOKIE NOTICE =====
+  var cn = document.getElementById('cookieNotice');
+  var cd = document.getElementById('cookieDismiss');
+  if(!localStorage.getItem('kaif-cookie-consent')){
+    setTimeout(function(){ cn.classList.remove('hidden'); }, 2500);
+  }
+  cd.addEventListener('click', function(){
+    localStorage.setItem('kaif-cookie-consent','dismissed');
+    cn.classList.add('hidden');
+  });
+
+  // ===== PRIVACY MODAL =====
+  var pm = document.getElementById('privacyModal');
+  var pp = document.getElementById('privacyBtn');
+  var pc = document.getElementById('privacyClose');
+  var pl = document.getElementById('privacyLink');
+  function openPrivacy(e){ e.preventDefault(); pm.classList.remove('hidden'); }
+  function closePrivacy(){ pm.classList.add('hidden'); }
+  pp.addEventListener('click', openPrivacy);
+  pl.addEventListener('click', openPrivacy);
+  pc.addEventListener('click', closePrivacy);
+  pm.addEventListener('click', function(e){ if(e.target === pm) closePrivacy(); });
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape') closePrivacy(); });
+})();
+</script>
+</body>
+</html>
