@@ -337,6 +337,15 @@
     cursor: pointer;
   }
 
+  /* Mobile iframe safety: prevent horizontal overflow without changing width. */
+  @media (max-width: 767px) {
+    html,
+    body {
+      overflow-x: hidden;
+      max-width: 100%;
+    }
+  }
+
   /* Hide scrollbar utility */
   .no-scrollbar::-webkit-scrollbar {
     display: none;
