@@ -1,0 +1,797 @@
+#!/usr/bin/env python3
+"""Generates standalone white-label sales page HTML for Elementor embedding."""
+import os
+
+OUTPUT = "/home/z/my-project/download/whitelabel-sales-page.html"
+
+HTML = r'''<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kaif Ali — White-Label WordPress Development for Agencies</title>
+<meta name="description" content="Most devs ghost. I don't. 7 years building WordPress sites under agency brands. Your clients, your brand, my code.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:5rem;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;overflow-x:hidden;max-width:100vw}
+body{font-family:'Manrope',system-ui,sans-serif;background:#f6f6f4;color:#0a0a0a;overflow-x:hidden;max-width:100vw;-webkit-tap-highlight-color:transparent;line-height:1.5}
+img{max-width:100%;display:block}
+a,button{cursor:pointer;text-decoration:none;color:inherit;font-family:inherit}
+button{background:none;border:none;font-size:inherit}
+ul{list-style:none}
+::selection{background:#2c64a1;color:#fff}
+:focus-visible{outline:2px solid #2c64a1;outline-offset:3px;border-radius:4px}
+
+.kaif-container{max-width:1600px;margin:0 auto;padding-left:1.25rem;padding-right:1.25rem}
+@media(min-width:768px){.kaif-container{padding-left:2.5rem;padding-right:2.5rem}}
+
+.font-display{font-family:'Audiowide',system-ui,sans-serif;font-weight:400;text-transform:uppercase;letter-spacing:.01em}
+.h-hero{font-family:'Audiowide',system-ui,sans-serif;font-weight:400;text-transform:uppercase;letter-spacing:.01em;line-height:1.05;font-size:clamp(1.75rem,5vw,3.25rem)}
+.h-section{font-family:'Audiowide',system-ui,sans-serif;font-weight:400;text-transform:uppercase;letter-spacing:.01em;line-height:1.1;font-size:clamp(1.375rem,3.5vw,2.75rem)}
+.h-card{font-family:'Audiowide',system-ui,sans-serif;font-weight:400;text-transform:uppercase;letter-spacing:.02em;line-height:1.15;font-size:clamp(1rem,1.8vw,1.5rem)}
+.text-gradient-brand{background:linear-gradient(135deg,#2c64a1 0%,#a9d2ff 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+
+.glass-nav{background:rgba(246,246,244,.7);backdrop-filter:blur(24px) saturate(180%);-webkit-backdrop-filter:blur(24px) saturate(180%);border:1px solid rgba(10,10,10,.06)}
+.bg-grid{background-image:linear-gradient(rgba(10,10,10,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(10,10,10,.025) 1px,transparent 1px);background-size:56px 56px}
+.bg-grid-dark{background-image:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);background-size:56px 56px}
+
+@keyframes mesh-drift-1{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(40px,-30px) scale(1.1)}66%{transform:translate(-30px,20px) scale(.95)}}
+@keyframes mesh-drift-2{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-50px,40px) scale(1.15)}}
+.animate-mesh-1{animation:mesh-drift-1 18s ease-in-out infinite}
+.animate-mesh-2{animation:mesh-drift-2 22s ease-in-out infinite}
+@keyframes shine{0%{transform:translateX(-120%) skewX(-15deg)}100%{transform:translateX(220%) skewX(-15deg)}}
+.shine-on-hover{position:relative;overflow:hidden}
+.shine-on-hover::after{content:"";position:absolute;top:0;left:0;width:60%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.25),transparent);transform:translateX(-120%) skewX(-15deg);pointer-events:none}
+.shine-on-hover:hover::after{animation:shine .9s ease-out}
+@keyframes ping{75%,100%{transform:scale(2);opacity:0}}
+.animate-ping{animation:ping 1.5s cubic-bezier(0,0,.2,1) infinite}
+
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .7s cubic-bezier(.25,.1,.25,1),transform .7s cubic-bezier(.25,.1,.25,1)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.stagger-item{opacity:0;transform:translateY(16px);transition:opacity .6s cubic-bezier(.25,.1,.25,1),transform .6s cubic-bezier(.25,.1,.25,1)}
+.stagger-item.visible{opacity:1;transform:translateY(0)}
+
+.glow-card{transition:transform .4s cubic-bezier(.25,.1,.25,1),box-shadow .4s ease,border-color .4s ease}
+.glow-card:hover{transform:translateY(-4px);box-shadow:0 24px 50px -20px rgba(44,100,161,.25)}
+
+.scroll-progress{position:fixed;top:0;left:0;right:0;height:2px;z-index:100;transform-origin:left;transform:scaleX(0);background:linear-gradient(90deg,#2c64a1,#a9d2ff,#2c64a1);transition:transform .1s linear}
+
+.kaif-header{position:fixed;top:0;left:0;right:0;z-index:50;transition:padding .3s ease}
+.kaif-header.scrolled{padding-top:.5rem;padding-bottom:.5rem}
+.kaif-header:not(.scrolled){padding-top:.75rem;padding-bottom:.75rem}
+.kaif-nav{display:flex;align-items:center;justify-content:space-between;border-radius:9999px;padding:.5rem .75rem;transition:all .3s ease}
+@media(min-width:768px){.kaif-nav{padding:.5rem 1.25rem}}
+.kaif-header.scrolled .kaif-nav{box-shadow:0 8px 32px -8px rgba(10,10,10,.15)}
+.kaif-logo{display:flex;align-items:center;gap:.5rem}
+.kaif-logo-badge{display:flex;align-items:center;justify-content:center;width:2rem;height:2rem;border-radius:9999px;background:#0a0a0a;color:#f6f6f4;font-family:'Audiowide';font-size:.875rem}
+.kaif-logo-text{font-family:'Audiowide';font-size:.875rem;letter-spacing:.08em;color:#0a0a0a}
+.kaif-logo-badge-wl{display:none;border-radius:9999px;background:rgba(44,100,161,.1);padding:.125rem .5rem;font-size:.5625rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:#2c64a1}
+@media(min-width:640px){.kaif-logo-badge-wl{display:inline-block}}
+.kaif-nav-links{display:none;align-items:center;gap:.125rem}
+@media(min-width:768px){.kaif-nav-links{display:flex}}
+.kaif-nav-link{display:inline-block;border-radius:9999px;padding:.375rem .875rem;font-size:.8125rem;font-weight:500;color:rgba(10,10,10,.6);transition:all .3s ease}
+.kaif-nav-link:hover{background:rgba(10,10,10,.05);color:#0a0a0a}
+.kaif-nav-link.active{background:rgba(169,210,255,.3);color:#2c64a1}
+.kaif-nav-cta{display:none;align-items:center;gap:.375rem;border-radius:9999px;background:#0a0a0a;padding:.5rem 1rem;font-size:.8125rem;font-weight:600;color:#f6f6f4;transition:background .3s ease}
+.kaif-nav-cta:hover{background:#2c64a1}
+@media(min-width:768px){.kaif-nav-cta{display:inline-flex}}
+.kaif-menu-btn{display:flex;align-items:center;justify-content:center;width:2.25rem;height:2.25rem;border-radius:9999px;background:rgba(10,10,10,.05);color:#0a0a0a}
+@media(min-width:768px){.kaif-menu-btn{display:none}}
+.kaif-menu-icon{position:relative;width:1rem;height:.75rem}
+.kaif-menu-icon span{position:absolute;left:0;height:2px;width:100%;background:#0a0a0a;transition:all .3s ease}
+.kaif-menu-icon span:nth-child(1){top:0}
+.kaif-menu-icon span:nth-child(2){top:.375rem}
+.kaif-menu-icon span:nth-child(3){top:.75rem}
+.kaif-menu-btn[aria-expanded="true"] .kaif-menu-icon span:nth-child(1){top:.375rem;transform:rotate(45deg)}
+.kaif-menu-btn[aria-expanded="true"] .kaif-menu-icon span:nth-child(2){opacity:0}
+.kaif-menu-btn[aria-expanded="true"] .kaif-menu-icon span:nth-child(3){top:.375rem;transform:rotate(-45deg)}
+
+.audience-switch{display:inline-flex;align-items:center;gap:.375rem;border-radius:9999px;border:1px solid rgba(10,10,10,.15);background:rgba(255,255,255,.6);padding:.375rem .75rem;font-size:.6875rem;font-weight:600;text-transform:uppercase;letter-spacing:.05em;color:rgba(10,10,10,.7);backdrop-filter:blur(8px);transition:all .3s ease}
+.audience-switch:hover{border-color:rgba(10,10,10,.3);background:#fff;color:#0a0a0a}
+@media(max-width:1023px){.audience-switch-desktop{display:none}}
+
+.mobile-menu{position:fixed;inset:0;z-index:40;overflow:hidden;transition:opacity .3s ease}
+.mobile-menu.hidden{opacity:0;pointer-events:none}
+.mobile-menu.visible{opacity:1;pointer-events:auto}
+@media(min-width:768px){.mobile-menu{display:none}}
+.mobile-menu-backdrop{position:absolute;inset:0;background:rgba(10,10,10,.4);backdrop-filter:blur(4px)}
+.mobile-menu-panel{position:absolute;right:0;top:0;height:100%;width:78%;max-width:24rem;background:#f6f6f4;padding:1.5rem;padding-top:6rem;box-shadow:0 25px 50px -12px rgba(0,0,0,.25);transition:transform .3s ease;overflow-y:auto}
+.mobile-menu.hidden .mobile-menu-panel{transform:translateX(100%)}
+.mobile-menu-link{display:block;border-radius:.75rem;padding:.75rem 1rem;font-family:'Audiowide';font-size:1rem;letter-spacing:.04em;color:#0a0a0a}
+.mobile-menu-link:hover{background:rgba(10,10,10,.05)}
+.mobile-menu-cta{display:flex;align-items:center;justify-content:center;gap:.5rem;border-radius:9999px;background:#0a0a0a;padding:.875rem 1.5rem;font-size:.875rem;font-weight:600;color:#f6f6f4;margin-top:1rem}
+.mobile-audience-switch{display:flex;align-items:center;justify-content:center;gap:.5rem;border-radius:9999px;border:1px solid rgba(10,10,10,.15);background:#fff;padding:.75rem 1.25rem;font-size:.875rem;font-weight:600;color:#0a0a0a;margin-top:.75rem;width:100%}
+@media(min-width:768px){.mobile-audience-switch{display:none}}
+
+.hero{position:relative;overflow:hidden;background:#f6f6f4;padding-top:8rem;padding-bottom:5rem}
+@media(min-width:768px){.hero{padding-top:9rem;padding-bottom:7rem}}
+.hero-mesh-1{position:absolute;left:-8rem;top:5rem;width:400px;height:400px;border-radius:9999px;background:rgba(169,210,255,.2);filter:blur(120px)}
+.hero-mesh-2{position:absolute;right:-8rem;bottom:0;width:400px;height:400px;border-radius:9999px;background:rgba(44,100,161,.1);filter:blur(120px)}
+.hero-content{position:relative;max-width:56rem;margin:0 auto;text-align:center}
+.eyebrow{display:inline-flex;align-items:center;gap:.5rem;border-radius:9999px;border:1px solid rgba(10,10,10,.1);background:rgba(255,255,255,.6);padding:.375rem .875rem;font-size:.6875rem;font-weight:600;text-transform:uppercase;letter-spacing:.15em;color:rgba(10,10,10,.7);backdrop-filter:blur(8px)}
+.eyebrow-dot{position:relative;display:inline-flex;width:6px;height:6px}
+.eyebrow-dot::before{content:"";position:absolute;inset:0;border-radius:9999px;background:#2c64a1;animation:ping 1.5s cubic-bezier(0,0,.2,1) infinite}
+.hero h1{margin-top:1.5rem;color:#0a0a0a}
+.hero-headline-line{display:block;opacity:0;transform:translateY(20px);animation:hero-reveal .7s cubic-bezier(.25,.1,.25,1) forwards}
+.hero-headline-line:nth-child(1){animation-delay:.1s}
+.hero-headline-line:nth-child(2){animation-delay:.2s}
+@keyframes hero-reveal{to{opacity:1;transform:translateY(0)}}
+.hero-subhead{margin-top:1.5rem;max-width:36rem;margin-left:auto;margin-right:auto;font-size:1rem;line-height:1.6;color:rgba(10,10,10,.65)}
+@media(min-width:640px){.hero-subhead{font-size:1.125rem}}
+.hero-cta-wrap{margin-top:2rem;display:flex;flex-direction:column;align-items:center;gap:.75rem}
+.btn-primary{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;border-radius:9999px;background:#0a0a0a;padding:1rem 2rem;font-size:.875rem;font-weight:600;color:#f6f6f4;transition:background .3s ease}
+.btn-primary:hover{background:#2c64a1}
+.hero-risk{font-size:.75rem;color:rgba(10,10,10,.55)}
+.hero-stats{margin-top:3rem;display:grid;grid-template-columns:repeat(2,1fr);gap:1rem 1rem}
+@media(min-width:640px){.hero-stats{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:.375rem 1.5rem}}
+.hero-stat{display:flex;align-items:baseline;gap:.25rem;white-space:nowrap;justify-content:center}
+.hero-stat-value{font-family:'Audiowide';font-size:1.5rem;color:#0a0a0a}
+.hero-stat-suffix{font-family:'Audiowide';font-size:.875rem;color:#2c64a1}
+.hero-stat-label{font-size:.6875rem;font-weight:500;color:rgba(10,10,10,.55)}
+.hero-stat-divider{display:none}
+@media(min-width:640px){.hero-stat-divider{display:block;width:1px;height:2rem;background:rgba(10,10,10,.1)}}
+
+.section-eyebrow{font-size:.6875rem;font-weight:600;text-transform:uppercase;letter-spacing:.18em;color:#2c64a1}
+
+.problem{position:relative;overflow:hidden;background:#0a0a0a;color:#f6f6f4;padding:5rem 0}
+@media(min-width:768px){.problem{padding:6rem 0}}
+.problem-mesh-1{position:absolute;left:-8rem;top:33%;width:400px;height:400px;border-radius:9999px;background:rgba(44,100,161,.2);filter:blur(140px);animation:mesh-drift-1 18s ease-in-out infinite}
+.problem-mesh-2{position:absolute;right:-8rem;bottom:25%;width:350px;height:350px;border-radius:9999px;background:rgba(169,210,255,.1);filter:blur(140px);animation:mesh-drift-2 22s ease-in-out infinite}
+.problem-content{position:relative;max-width:56rem;margin:0 auto;text-align:center}
+.problem h2{margin-top:1rem}
+.problem-cards{margin-top:3rem;display:grid;grid-template-columns:1fr;gap:.75rem}
+@media(min-width:768px){.problem-cards{grid-template-columns:repeat(3,1fr);gap:1rem}}
+.problem-card{border-radius:1rem;border:1px solid rgba(246,246,244,.1);background:rgba(255,255,255,.03);padding:1.25rem;transition:all .3s ease}
+@media(min-width:768px){.problem-card{padding:1.5rem}}
+.problem-card:hover{border-color:rgba(169,210,255,.3);background:rgba(255,255,255,.06);transform:translateY(-4px)}
+.problem-card-icon{display:flex;align-items:center;justify-content:center;width:2.5rem;height:2.5rem;border-radius:.5rem;background:rgba(169,210,255,.1);color:#a9d2ff;transition:all .3s ease;margin:0 auto}
+.problem-card:hover .problem-card-icon{transform:scale(1.1);background:rgba(169,210,255,.2)}
+.problem-card-icon svg{width:20px;height:20px}
+.problem-card h3{margin-top:1rem;font-family:'Audiowide';font-size:1rem;line-height:1.3;letter-spacing:.02em;color:#f6f6f4}
+.problem-card p{margin-top:.375rem;font-size:.875rem;line-height:1.5;color:rgba(246,246,244,.6)}
+.problem-cta{margin-top:2.5rem;font-family:'Audiowide';font-size:1rem;line-height:1.3;color:#f6f6f4}
+@media(min-width:768px){.problem-cta{font-size:1.125rem}}
+
+.services{background:#fff;padding:5rem 0}
+@media(min-width:768px){.services{padding:6rem 0}}
+.services-header{max-width:42rem}
+.services-grid{margin-top:2.5rem;display:grid;grid-template-columns:1fr;gap:.75rem}
+@media(min-width:640px){.services-grid{grid-template-columns:repeat(2,1fr);gap:1rem}}
+.service-card{border-radius:1rem;border:1px solid rgba(10,10,10,.1);background:#f6f6f4;padding:1.25rem;transition:all .3s ease}
+@media(min-width:768px){.service-card{padding:1.5rem}}
+.service-card:hover{border-color:rgba(44,100,161,.3);background:#fff;transform:translateY(-4px);box-shadow:0 24px 50px -20px rgba(44,100,161,.25)}
+.service-card-icon{display:flex;align-items:center;justify-content:center;width:3rem;height:3rem;border-radius:.75rem;background:#0a0a0a;color:#f6f6f4;transition:all .3s ease}
+.service-card:hover .service-card-icon{transform:scale(1.1);background:#2c64a1}
+.service-card-icon svg{width:20px;height:20px}
+.service-card h3{margin-top:1.25rem;font-family:'Audiowide';font-size:1.125rem;letter-spacing:.02em;color:#0a0a0a}
+@media(min-width:768px){.service-card h3{font-size:1.25rem}}
+.service-card p{margin-top:.5rem;font-size:.875rem;line-height:1.5;color:rgba(10,10,10,.55)}
+
+.why-me{border-top:1px solid rgba(10,10,10,.08);border-bottom:1px solid rgba(10,10,10,.08);background:#f6f6f4;padding:5rem 0}
+@media(min-width:768px){.why-me{padding:6rem 0}}
+.why-header{max-width:42rem}
+.why-grid{margin-top:2.5rem;display:grid;grid-template-columns:1fr;gap:.75rem}
+@media(min-width:640px){.why-grid{grid-template-columns:repeat(2,1fr);gap:1rem}}
+@media(min-width:1024px){.why-grid{grid-template-columns:repeat(3,1fr)}}
+.why-card{border-radius:1rem;border:1px solid rgba(10,10,10,.1);background:#fff;padding:1.25rem;transition:all .3s ease}
+@media(min-width:768px){.why-card{padding:1.5rem}}
+.why-card:hover{border-color:rgba(44,100,161,.3);transform:translateY(-4px);box-shadow:0 24px 50px -20px rgba(44,100,161,.25)}
+.why-card-icon{display:flex;align-items:center;justify-content:center;width:3rem;height:3rem;border-radius:.75rem;background:rgba(44,100,161,.1);color:#2c64a1;transition:all .3s ease}
+.why-card:hover .why-card-icon{transform:scale(1.1);background:#2c64a1;color:#f6f6f4}
+.why-card-icon svg{width:20px;height:20px}
+.why-card h3{margin-top:1.25rem;font-family:'Audiowide';font-size:1.125rem;letter-spacing:.02em;color:#0a0a0a}
+@media(min-width:768px){.why-card h3{font-size:1.25rem}}
+.why-card p{margin-top:.5rem;font-size:.875rem;line-height:1.5;color:rgba(10,10,10,.55)}
+
+.process{background:#fff;padding:5rem 0}
+@media(min-width:768px){.process{padding:6rem 0}}
+.process-header{max-width:42rem}
+.process-grid{margin-top:2.5rem;display:grid;grid-template-columns:1fr;gap:.75rem}
+@media(min-width:640px){.process-grid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1024px){.process-grid{grid-template-columns:repeat(4,1fr);gap:1rem}}
+.step-card{border-radius:1rem;border:1px solid rgba(10,10,10,.1);background:#f6f6f4;padding:1.25rem;transition:all .3s ease}
+@media(min-width:768px){.step-card{padding:1.5rem}}
+.step-card:hover{border-color:rgba(44,100,161,.3);background:#fff;transform:translateY(-4px);box-shadow:0 24px 50px -20px rgba(44,100,161,.25)}
+.step-card-top{display:flex;align-items:center;justify-content:space-between}
+.step-card-num{font-family:'Audiowide';font-size:.75rem;letter-spacing:.1em;color:#2c64a1;font-weight:bold}
+.step-card-icon{display:flex;align-items:center;justify-content:center;width:2.25rem;height:2.25rem;border-radius:.5rem;background:rgba(169,210,255,.3);color:#2c64a1;transition:all .3s ease}
+.step-card:hover .step-card-icon{transform:scale(1.1);background:#2c64a1;color:#f6f6f4}
+.step-card-icon svg{width:18px;height:18px}
+.step-card h3{margin-top:1.25rem;font-family:'Audiowide';font-size:1.125rem;letter-spacing:.02em;color:#0a0a0a}
+@media(min-width:768px){.step-card h3{font-size:1.25rem}}
+.step-card p{margin-top:.5rem;font-size:.875rem;line-height:1.5;color:rgba(10,10,10,.55)}
+
+.faq{background:#f6f6f4;padding:5rem 0}
+@media(min-width:768px){.faq{padding:6rem 0}}
+.faq-content{max-width:42rem;margin:0 auto}
+.faq-header{text-align:center}
+.faq-list{margin-top:2rem;display:flex;flex-direction:column;gap:.625rem}
+.faq-item{overflow:hidden;border-radius:1rem;border:1px solid rgba(10,10,10,.08);background:rgba(255,255,255,.5);transition:all .3s ease}
+.faq-item.open{border-color:rgba(10,10,10,.15);background:#fff;box-shadow:0 8px 24px -12px rgba(10,10,10,.1)}
+.faq-item:not(.open):hover{background:#fff}
+.faq-question{display:flex;align-items:center;justify-content:space-between;gap:.75rem;padding:1rem;text-align:left;width:100%;cursor:pointer}
+@media(min-width:768px){.faq-question{padding:1.25rem;gap:1rem}}
+.faq-question-text{font-family:'Audiowide';font-size:1rem;letter-spacing:.02em;transition:color .3s ease;color:#0a0a0a}
+@media(min-width:768px){.faq-question-text{font-size:1.125rem}}
+.faq-item.open .faq-question-text{color:#2c64a1}
+.faq-toggle{display:flex;align-items:center;justify-content:center;width:2.25rem;height:2.25rem;border-radius:9999px;transition:all .3s ease;background:rgba(10,10,10,.05);color:#0a0a0a;flex-shrink:0}
+@media(min-width:768px){.faq-toggle{width:2rem;height:2rem}}
+.faq-item.open .faq-toggle{background:#0a0a0a;color:#f6f6f4}
+.faq-toggle svg{width:14px;height:14px}
+.faq-answer{max-height:0;overflow:hidden;transition:max-height .3s ease,opacity .3s ease;opacity:0}
+.faq-item.open .faq-answer{opacity:1}
+.faq-answer-text{padding:0 1rem 1.25rem;font-size:.875rem;line-height:1.6;color:rgba(10,10,10,.65)}
+@media(min-width:768px){.faq-answer-text{padding:0 1.25rem 1.25rem;font-size:1rem}}
+
+.booking{position:relative;overflow:hidden;background:#0a0a0a;color:#f6f6f4;padding:5rem 0}
+@media(min-width:768px){.booking{padding:6rem 0}}
+.booking-mesh-1{position:absolute;left:-8rem;top:25%;width:400px;height:400px;border-radius:9999px;background:rgba(44,100,161,.25);filter:blur(140px);animation:mesh-drift-1 18s ease-in-out infinite}
+.booking-mesh-2{position:absolute;right:-8rem;bottom:0;width:400px;height:400px;border-radius:9999px;background:rgba(169,210,255,.1);filter:blur(140px);animation:mesh-drift-2 22s ease-in-out infinite}
+.booking-grid{position:relative;display:grid;grid-template-columns:1fr;gap:2rem}
+@media(min-width:1024px){.booking-grid{grid-template-columns:repeat(12,1fr);gap:2.5rem}}
+.booking-left{grid-column:span 1}
+@media(min-width:1024px){.booking-left{grid-column:span 5}}
+.booking-right{grid-column:span 1}
+@media(min-width:1024px){.booking-right{grid-column:span 7}}
+.booking-eyebrow{display:inline-flex;align-items:center;gap:.5rem;border-radius:9999px;border:1px solid rgba(246,246,244,.15);padding:.375rem .875rem;font-size:.6875rem;font-weight:600;text-transform:uppercase;letter-spacing:.15em;color:rgba(246,246,244,.85)}
+.booking h2{margin-top:1rem}
+.booking-subhead{margin-top:1.25rem;max-width:28rem;font-size:1rem;line-height:1.6;color:rgba(246,246,244,.65)}
+@media(min-width:768px){.booking-subhead{font-size:1.125rem}}
+.booking-list{margin-top:1.5rem;display:flex;flex-direction:column;gap:.625rem}
+.booking-list-item{display:flex;align-items:flex-start;gap:.625rem;font-size:.875rem;color:rgba(246,246,244,.8)}
+@media(min-width:768px){.booking-list-item{font-size:1rem}}
+.booking-list-item svg{width:16px;height:16px;flex-shrink:0;margin-top:2px;color:#a9d2ff}
+.booking-trust{margin-top:1.5rem;display:flex;align-items:center;gap:.75rem;border-radius:.75rem;border:1px solid rgba(246,246,244,.1);background:rgba(255,255,255,.03);padding:.875rem}
+.booking-trust-icon{display:flex;align-items:center;justify-content:center;width:2.25rem;height:2.25rem;border-radius:.5rem;background:rgba(169,210,255,.15);color:#a9d2ff;flex-shrink:0}
+.booking-trust-icon svg{width:18px;height:18px}
+.booking-trust-text{font-size:.75rem;color:rgba(246,246,244,.6)}
+.booking-trust-text strong{color:#f6f6f4;display:block}
+.booking-contact{margin-top:1.25rem;display:flex;flex-wrap:wrap;gap:.5rem}
+.booking-contact-link{display:inline-flex;align-items:center;gap:.5rem;border-radius:9999px;border:1px solid rgba(246,246,244,.15);padding:.625rem 1rem;font-size:.75rem;color:rgba(246,246,244,.85);transition:all .3s ease}
+.booking-contact-link:hover{border-color:rgba(246,246,244,.3);color:#f6f6f4}
+.booking-contact-link svg{width:14px;height:14px}
+.booking-privacy{margin-top:1.25rem;font-size:.6875rem;line-height:1.5;color:rgba(246,246,244,.6)}
+.booking-iframe-wrap{overflow:hidden;border-radius:1.5rem;border:1px solid rgba(246,246,244,.1);background:#fff;box-shadow:0 20px 60px -20px rgba(0,0,0,.4)}
+.booking-iframe-header{display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(10,10,10,.08);background:#f6f6f4;padding:.875rem 1.25rem}
+.booking-iframe-label{display:flex;align-items:center;gap:.5rem;font-size:.75rem;font-weight:600;text-transform:uppercase;letter-spacing:.05em;color:rgba(10,10,10,.7)}
+.booking-iframe-label svg{width:14px;height:14px;color:#2c64a1}
+.booking-iframe-status{display:flex;align-items:center;gap:.375rem;font-size:.6875rem;color:rgba(10,10,10,.55)}
+.booking-iframe-status::before{content:"";width:6px;height:6px;border-radius:9999px;background:#10b981}
+.booking-iframe{width:100%;height:680px;border:none;min-height:600px}
+.booking-iframe-footer{margin-top:.75rem;display:flex;align-items:center;justify-content:space-between;gap:.75rem;border-radius:.75rem;border:1px solid rgba(246,246,244,.1);background:rgba(255,255,255,.03);padding:.625rem 1rem;font-size:.75rem;color:rgba(246,246,244,.55)}
+.booking-iframe-footer a{display:inline-flex;align-items:center;gap:.25rem;color:rgba(246,246,244,.85);transition:color .3s ease}
+.booking-iframe-footer a:hover{color:#f6f6f4}
+.booking-iframe-footer svg{width:12px;height:12px}
+
+.kaif-footer{position:relative;overflow:hidden;background:#f6f6f4}
+.footer-cta{position:relative;border-top:1px solid rgba(10,10,10,.08);background:#f6f6f4;padding:5rem 0;text-align:center}
+@media(min-width:768px){.footer-cta{padding:6rem 0}}
+.footer-cta-mesh{position:absolute;left:50%;top:50%;width:700px;height:300px;transform:translate(-50%,-50%);border-radius:9999px;background:rgba(169,210,255,.2);filter:blur(120px)}
+.footer-cta-content{position:relative;display:flex;flex-direction:column;align-items:center}
+.footer-cta-buttons{margin-top:1.75rem;display:flex;flex-direction:column;align-items:center;gap:.625rem}
+@media(min-width:640px){.footer-cta-buttons{flex-direction:row}}
+.btn-secondary{display:inline-flex;align-items:center;justify-content:center;gap:.375rem;border-radius:9999px;border:1px solid rgba(10,10,10,.15);background:rgba(255,255,255,.6);padding:.875rem 1.25rem;font-size:.875rem;font-weight:600;color:rgba(10,10,10,.7);backdrop-filter:blur(8px);transition:color .3s ease}
+.btn-secondary:hover{color:#0a0a0a}
+.footer-bottom{border-top:1px solid rgba(10,10,10,.08);background:#0a0a0a;padding:1.5rem 0;color:rgba(246,246,244,.6)}
+.footer-bottom-content{display:flex;flex-direction:column;align-items:center;justify-content:space-between;gap:1rem}
+@media(min-width:768px){.footer-bottom-content{flex-direction:row}}
+.footer-brand{display:flex;align-items:center;gap:.625rem}
+.footer-brand-badge{display:flex;align-items:center;justify-content:center;width:1.75rem;height:1.75rem;border-radius:9999px;background:#f6f6f4;color:#0a0a0a}
+.footer-brand-badge span{font-family:'Audiowide';font-size:.75rem}
+.footer-brand-name{font-family:'Audiowide';letter-spacing:.06em;color:#f6f6f4;font-size:.75rem}
+.footer-brand-desc{color:rgba(246,246,244,.6);font-size:.75rem}
+.footer-nav{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:1rem;font-size:.75rem}
+.footer-nav a{transition:color .3s ease}
+.footer-nav a:hover{color:#f6f6f4}
+.footer-copy{font-size:.75rem;color:rgba(246,246,244,.6)}
+
+.cookie-notice{position:fixed;top:4rem;left:.75rem;right:.75rem;z-index:30;max-width:28rem;margin:0 auto;border-radius:1rem;border:1px solid rgba(10,10,10,.1);background:#fff;padding:.75rem;box-shadow:0 8px 32px -8px rgba(10,10,10,.15);transition:opacity .3s ease,transform .3s ease}
+@media(min-width:768px){.cookie-notice{left:1rem;right:1rem;max-width:32rem;padding:1rem}}
+.cookie-notice.hidden{opacity:0;transform:translateY(-20px);pointer-events:none}
+.cookie-notice-content{display:flex;align-items:flex-start;gap:.625rem}
+@media(min-width:768px){.cookie-notice-content{align-items:center}}
+.cookie-notice-text{flex:1;font-size:.6875rem;line-height:1.5;color:rgba(10,10,10,.65)}
+@media(min-width:768px){.cookie-notice-text{font-size:.75rem}}
+.cookie-notice-text a{color:#2c64a1;font-weight:600;text-decoration:underline}
+.cookie-notice-btn{flex-shrink:0;border-radius:9999px;background:#0a0a0a;padding:.5rem 1rem;font-size:.75rem;font-weight:600;color:#f6f6f4;transition:background .3s ease;min-height:36px}
+.cookie-notice-btn:hover{background:#2c64a1}
+
+.privacy-modal{position:fixed;inset:0;z-index:60;display:flex;align-items:center;justify-content:center;background:rgba(10,10,10,.6);backdrop-filter:blur(4px);padding:1rem}
+.privacy-modal.hidden{display:none}
+.privacy-modal-content{max-height:80vh;overflow-y:auto;max-width:32rem;width:100%;border-radius:1rem;background:#f6f6f4;padding:1.5rem;box-shadow:0 25px 50px -12px rgba(0,0,0,.25)}
+@media(min-width:768px){.privacy-modal-content{padding:2rem}}
+.privacy-modal-header{display:flex;align-items:center;justify-content:space-between}
+.privacy-modal-title{font-family:'Audiowide';font-size:1.25rem;letter-spacing:.02em;color:#0a0a0a}
+.privacy-modal-close{display:flex;align-items:center;justify-content:center;width:2rem;height:2rem;border-radius:9999px;background:rgba(10,10,10,.05);color:#0a0a0a}
+.privacy-modal-close:hover{background:rgba(10,10,10,.1)}
+.privacy-modal-body{margin-top:1rem;display:flex;flex-direction:column;gap:.75rem;font-size:.875rem;line-height:1.5;color:rgba(10,10,10,.65)}
+.privacy-modal-body strong{color:#0a0a0a}
+.privacy-modal-body a{color:#2c64a1;font-weight:600;text-decoration:underline}
+
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+  .animate-mesh-1,.animate-mesh-2,.shine-on-hover::after{animation:none!important}
+  .glow-card:hover{transform:none!important;box-shadow:none!important}
+  .hero-headline-line{opacity:1!important;transform:none!important;animation:none!important}
+}
+</style>
+</head>
+<body>
+
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<header class="kaif-header" id="navbar">
+  <div class="kaif-container">
+    <nav class="kaif-nav glass-nav" aria-label="Main navigation">
+      <a href="#top" class="kaif-logo" aria-label="Kaif Ali — home">
+        <span class="kaif-logo-badge">K</span>
+        <span class="kaif-logo-text">Kaif Ali</span>
+        <span class="kaif-logo-badge-wl">White-label</span>
+      </a>
+      <ul class="kaif-nav-links" id="navLinks">
+        <li><a href="#problem" class="kaif-nav-link">Problem</a></li>
+        <li><a href="#services" class="kaif-nav-link">Services</a></li>
+        <li><a href="#why-me" class="kaif-nav-link">Why Me</a></li>
+        <li><a href="#process" class="kaif-nav-link">Process</a></li>
+        <li><a href="#faq" class="kaif-nav-link">FAQ</a></li>
+      </ul>
+      <div style="display:flex;align-items:center;gap:.375rem">
+        <a href="/" class="audience-switch audience-switch-desktop">For Business Owners</a>
+        <a href="#book" class="kaif-nav-cta">
+          <span style="position:relative;display:inline-flex;width:6px;height:6px">
+            <span style="position:absolute;inset:0;border-radius:9999px;background:#a9d2ff;animation:ping 1.5s cubic-bezier(0,0,.2,1) infinite"></span>
+            <span style="position:relative;display:inline-flex;width:6px;height:6px;border-radius:9999px;background:#a9d2ff"></span>
+          </span>
+          Book a Call
+        </a>
+        <button class="kaif-menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false">
+          <div class="kaif-menu-icon"><span></span><span></span><span></span></div>
+        </button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<div class="mobile-menu hidden" id="mobileMenu">
+  <div class="mobile-menu-backdrop" id="menuBackdrop"></div>
+  <div class="mobile-menu-panel">
+    <ul>
+      <li><a href="#problem" class="mobile-menu-link">Problem</a></li>
+      <li><a href="#services" class="mobile-menu-link">Services</a></li>
+      <li><a href="#why-me" class="mobile-menu-link">Why Me</a></li>
+      <li><a href="#process" class="mobile-menu-link">Process</a></li>
+      <li><a href="#faq" class="mobile-menu-link">FAQ</a></li>
+    </ul>
+    <a href="#book" class="mobile-menu-cta">Book a Call</a>
+    <a href="/" class="mobile-audience-switch">For Business Owners →</a>
+  </div>
+</div>
+
+<main id="main-content">
+
+<section class="hero" id="top">
+  <div class="bg-grid" style="position:absolute;inset:0;opacity:.6;pointer-events:none"></div>
+  <div class="hero-mesh-1" aria-hidden="true"></div>
+  <div class="hero-mesh-2" aria-hidden="true"></div>
+  <div class="kaif-container" style="position:relative">
+    <div class="hero-content">
+      <div class="eyebrow reveal">
+        <span class="eyebrow-dot"></span>
+        White-label WordPress development
+      </div>
+      <h1 class="h-hero reveal">
+        <span class="hero-headline-line">Most devs ghost.</span>
+        <span class="hero-headline-line text-gradient-brand">I don't.</span>
+      </h1>
+      <p class="hero-subhead reveal">I'm <strong style="color:#0a0a0a">Kaif Ali</strong>. 7 years building WordPress sites under agency brands. Your clients, your brand, my code. No babysitting required.</p>
+      <div class="hero-cta-wrap reveal">
+        <a href="#book" class="btn-primary shine-on-hover">Book a discovery call <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></a>
+        <p class="hero-risk">Free 15-min call · NDA available · No obligation</p>
+      </div>
+      <div class="hero-stats reveal">
+        <div class="hero-stat"><span class="hero-stat-value">7</span><span class="hero-stat-suffix">yrs</span><span class="hero-stat-label">WordPress</span></div>
+        <div class="hero-stat-divider"></div>
+        <div class="hero-stat"><span class="hero-stat-value">200</span><span class="hero-stat-suffix">+</span><span class="hero-stat-label">sites shipped</span></div>
+        <div class="hero-stat-divider"></div>
+        <div class="hero-stat"><span class="hero-stat-value">8</span><span class="hero-stat-label">agencies partnered</span></div>
+        <div class="hero-stat-divider"></div>
+        <div class="hero-stat"><span class="hero-stat-value">0</span><span class="hero-stat-label">missed deadlines</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="problem" id="problem">
+  <div class="bg-grid-dark" style="position:absolute;inset:0;opacity:.5;pointer-events:none"></div>
+  <div class="problem-mesh-1" aria-hidden="true"></div>
+  <div class="problem-mesh-2" aria-hidden="true"></div>
+  <div class="kaif-container" style="position:relative;max-width:56rem">
+    <div class="problem-content reveal">
+      <h2 class="h-section text-balance">Finding a dev <span style="color:#a9d2ff">who actually delivers</span> is harder than it should be.</h2>
+      <p style="margin-top:1.25rem;max-width:32rem;margin-left:auto;margin-right:auto;font-size:1rem;line-height:1.6;color:rgba(246,246,244,.65)">Most agencies have been burned by freelancers who disappear, miss deadlines, or deliver broken code. <strong style="color:#f6f6f4">You need someone who shows up.</strong></p>
+    </div>
+    <div class="problem-cards" id="problemCards">
+      <div class="problem-card stagger-item">
+        <div class="problem-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 0-8-3-8-7s3-7 8-7c2 0 3 .5 4 1.5"/><circle cx="17" cy="7" r="1"/><circle cx="14" cy="11" r="1"/><circle cx="17" cy="15" r="1"/></svg></div>
+        <h3>Your dev ghosted</h3>
+        <p>The freelancer vanished. The client's waiting. You're left explaining why nothing's shipped.</p>
+      </div>
+      <div class="problem-card stagger-item">
+        <div class="problem-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+        <h3>Edits take weeks</h3>
+        <p>Simple changes become tickets that sit. Clients churn because they can't get basic updates.</p>
+      </div>
+      <div class="problem-card stagger-item">
+        <div class="problem-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 18 13.5 8.5 8.5 13.5 1 6"/><polyline points="17 18 23 18 23 12"/></svg></div>
+        <h3>You're turning down work</h3>
+        <p>No dev capacity means no new clients. You're saying no to revenue you could capture.</p>
+      </div>
+    </div>
+    <div class="problem-cta reveal">No ghosting. No missed deadlines.<br><span style="color:#a9d2ff">Just reliable dev that ships.</span></div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="kaif-container">
+    <div class="services-header reveal">
+      <div class="section-eyebrow">What you get</div>
+      <h2 class="h-section" style="margin-top:.75rem;color:#0a0a0a">Full service.<br>Your brand.</h2>
+      <p style="margin-top:1rem;max-width:32rem;font-size:.875rem;color:rgba(10,10,10,.55)">Everything your agency needs under the hood. I stay invisible — your clients never know I existed.</p>
+    </div>
+    <div class="services-grid" id="servicesGrid">
+      <div class="service-card stagger-item">
+        <div class="service-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
+        <h3>WordPress Development</h3>
+        <p>Full site builds from your design files. Custom themes, Elementor, responsive, SEO-ready. Pixel-perfect, every time.</p>
+      </div>
+      <div class="service-card stagger-item">
+        <div class="service-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg></div>
+        <h3>Design Help</h3>
+        <p>Don't have a designer? I can take wireframes to finished designs, or polish what you have. Not just a code monkey.</p>
+      </div>
+      <div class="service-card stagger-item">
+        <div class="service-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0018 8 6 6 0 006 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 018.91 14"/></svg></div>
+        <h3>Strategy</h3>
+        <p>Page structure, user flow, conversion logic. I'll tell you what works and what doesn't before you build it.</p>
+      </div>
+      <div class="service-card stagger-item">
+        <div class="service-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg></div>
+        <h3>Maintenance</h3>
+        <p>Ongoing edits, updates, security patches, and priority support. Your dev team for as long as you need one.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="why-me" id="why-me">
+  <div class="kaif-container">
+    <div class="why-header reveal">
+      <div class="section-eyebrow">Why work with me</div>
+      <h2 class="h-section" style="margin-top:.75rem;color:#0a0a0a">Not just another<br>freelancer.</h2>
+      <p style="margin-top:1rem;max-width:32rem;font-size:.875rem;color:rgba(10,10,10,.55)">The difference between a dev who costs you clients and one who helps you grow.</p>
+    </div>
+    <div class="why-grid" id="whyGrid">
+      <div class="why-card stagger-item">
+        <div class="why-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <h3>Reliable Delivery</h3>
+        <p>7 years. 200+ sites shipped. Zero missed deadlines. When I say it ships Friday, it ships Friday.</p>
+      </div>
+      <div class="why-card stagger-item">
+        <div class="why-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9.88 9.88a3 3 0 104.24 4.24"/><path d="M10.73 5.08A10.43 10.43 0 0112 5c7 0 10 7 10 7a13.16 13.16 0 01-1.67 2.68"/><path d="M6.61 6.61A13.526 13.526 0 002 12s3 7 10 7a9.74 9.74 0 005.39-1.61"/><line x1="2" y1="2" x2="22" y2="22"/></svg></div>
+        <h3>Truly White-Label</h3>
+        <p>Your brand, your client, your credit. I stay invisible. No watermarks, no footprints, no poaching.</p>
+      </div>
+      <div class="why-card stagger-item">
+        <div class="why-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg></div>
+        <h3>WP Specialist</h3>
+        <p>7 years of WordPress specifically — not a generalist who dabbles. I know the CMS inside out.</p>
+      </div>
+      <div class="why-card stagger-item">
+        <div class="why-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div>
+        <h3>Direct Communication</h3>
+        <p>You talk to me, not an account manager. Quick questions get quick answers. No layers.</p>
+      </div>
+      <div class="why-card stagger-item">
+        <div class="why-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></div>
+        <h3>Scalable Capacity</h3>
+        <p>Need 1 site this month and 5 next? I scale up and down with your workload. No retainers required.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="process" id="process">
+  <div class="kaif-container">
+    <div class="process-header reveal">
+      <div class="section-eyebrow">How it works</div>
+      <h2 class="h-section" style="margin-top:.75rem;color:#0a0a0a">Simple process.<br>Reliable delivery.</h2>
+    </div>
+    <div class="process-grid" id="processGrid">
+      <div class="step-card stagger-item">
+        <div class="step-card-top"><span class="step-card-num">01</span><div class="step-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div></div>
+        <h3>Brief</h3>
+        <p>You send the design files, specs, or client requirements. I review and confirm scope, timeline, and deliverables.</p>
+      </div>
+      <div class="step-card stagger-item">
+        <div class="step-card-top"><span class="step-card-num">02</span><div class="step-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div></div>
+        <h3>Build</h3>
+        <p>I build the site on WordPress. You get progress updates at key milestones. No surprises, no going dark.</p>
+      </div>
+      <div class="step-card stagger-item">
+        <div class="step-card-top"><span class="step-card-num">03</span><div class="step-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 00-2.91-.09z"/><path d="M12 15l-3-3a22 22 0 012-3.95A12.88 12.88 0 0122 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 01-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg></div></div>
+        <h3>Deliver</h3>
+        <p>Launched under your brand. I stay invisible — your client never knows I existed. You take the credit.</p>
+      </div>
+      <div class="step-card stagger-item">
+        <div class="step-card-top"><span class="step-card-num">04</span><div class="step-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 18v-6a9 9 0 0118 0v6"/><path d="M21 19a2 2 0 01-2 2h-1a2 2 0 01-2-2v-3a2 2 0 012-2h3zM3 19a2 2 0 002 2h1a2 2 0 002-2v-3a2 2 0 00-2-2H3z"/></svg></div></div>
+        <h3>Support</h3>
+        <p>Ongoing edits, updates, and fixes. I'm your dev team for as long as you need one. Scale up or down anytime.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="faq" id="faq">
+  <div class="kaif-container">
+    <div class="faq-content">
+      <div class="faq-header reveal">
+        <div class="eyebrow" style="margin:0 auto">FAQ</div>
+        <h2 class="h-section" style="margin-top:1rem;color:#0a0a0a">Agency questions<br>that come up.</h2>
+      </div>
+      <div class="faq-list" id="faqList">
+        <div class="faq-item open">
+          <button class="faq-question" aria-expanded="true"><span class="faq-question-text">How does white-label work?</span><span class="faq-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/></svg></span></button>
+          <div class="faq-answer"><div class="faq-answer-text">You send me the design files, specs, or client requirements. I build the site on WordPress. You deliver it to your client under your brand. I stay completely invisible — no watermarks, no credit, no contact with your client unless you explicitly want me to. You take all the credit.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false"><span class="faq-question-text">Do you sign NDAs?</span><span class="faq-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></button>
+          <div class="faq-answer"><div class="faq-answer-text">Yes. I'm happy to sign your NDA before we start. I work with agency partners regularly and understand the importance of confidentiality. Your clients, your designs, and your processes stay private.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false"><span class="faq-question-text">Can you work in our project management tool?</span><span class="faq-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></button>
+          <div class="faq-answer"><div class="faq-answer-text">Yes. I've worked in Slack, Asana, Trello, ClickUp, Notion, Basecamp, and email-only. Whatever your agency uses, I'll adapt. I prefer a single channel for communication to keep things clean.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false"><span class="faq-question-text">What's your typical turnaround?</span><span class="faq-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></button>
+          <div class="faq-answer"><div class="faq-answer-text">Landing pages: 2-5 days. Full WordPress builds: 1-3 weeks depending on scope. Emergency fixes: same-day if I have capacity. I'll give you an exact timeline when I review the brief, and I stick to it.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false"><span class="faq-question-text">Do you handle client communication?</span><span class="faq-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></button>
+          <div class="faq-answer"><div class="faq-answer-text">By default, no — you handle client comms, I handle dev. But if you want me to join client calls or communicate directly (under your email/domain), we can arrange that. Most agencies prefer to keep me behind the scenes.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false"><span class="faq-question-text">What if my client needs something you don't do?</span><span class="faq-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></button>
+          <div class="faq-answer"><div class="faq-answer-text">I'll tell you upfront. I focus on WordPress — I don't do custom web apps, mobile apps, or e-commerce platforms like Shopify. If a project is outside my scope, I'll refer you to someone who can help rather than fake it.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false"><span class="faq-question-text">How does pricing work?</span><span class="faq-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></button>
+          <div class="faq-answer"><div class="faq-answer-text">Custom quotes based on scope and complexity. No hidden fees, no surprises. Book a discovery call and I'll give you a clear quote based on your specific needs — whether that's a one-off build, ongoing maintenance, or a retainer arrangement.</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="booking" id="book">
+  <div class="bg-grid-dark" style="position:absolute;inset:0;opacity:.5;pointer-events:none"></div>
+  <div class="booking-mesh-1" aria-hidden="true"></div>
+  <div class="booking-mesh-2" aria-hidden="true"></div>
+  <div class="kaif-container" style="position:relative">
+    <div class="booking-grid">
+      <div class="booking-left reveal">
+        <div class="booking-eyebrow">
+          <span style="position:relative;display:inline-flex;width:6px;height:6px">
+            <span style="position:absolute;inset:0;border-radius:9999px;background:#a9d2ff;animation:ping 1.5s cubic-bezier(0,0,.2,1) infinite"></span>
+            <span style="position:relative;display:inline-flex;width:6px;height:6px;border-radius:9999px;background:#a9d2ff"></span>
+          </span>
+          <span id="bookingEyebrow">Now booking Discovery Calls</span>
+        </div>
+        <h2 class="h-section">Book a<br><span style="color:#a9d2ff">Discovery Call.</span></h2>
+        <p class="booking-subhead">15 minutes. Tell me about your agency, your workload, and what you need from a dev partner. We'll see if there's a fit — no pressure, no pitch.</p>
+        <div class="booking-list">
+          <div class="booking-list-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> Quick assessment of your dev needs</div>
+          <div class="booking-list-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> Honest take on whether I can help</div>
+          <div class="booking-list-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> Clear next steps — partnership or not</div>
+        </div>
+        <div class="booking-trust">
+          <div class="booking-trust-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="8.5" cy="7" r="4"/><polyline points="17 11 19 13 23 9"/></svg></div>
+          <div class="booking-trust-text"><strong>7 years · 200+ sites shipped for agencies</strong>You'll talk to Kaif directly. No account managers.</div>
+        </div>
+        <div class="booking-contact">
+          <a href="mailto:kaif@selvinx.com" class="booking-contact-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg> kaif@selvinx.com</a>
+        </div>
+        <p class="booking-privacy">Booking handled by Selvinx. Your details go directly to Kaif — not stored on this page. NDA available on request.</p>
+      </div>
+      <div class="booking-right reveal">
+        <div class="booking-iframe-wrap">
+          <div class="booking-iframe-header">
+            <div class="booking-iframe-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Pick a time</div>
+            <div class="booking-iframe-status">Live calendar</div>
+          </div>
+          <iframe src="https://selvinx.com/?fluent-booking=calendar&host=selvinx&event=30min-3" title="Book your Discovery Call — Selvinx calendar" class="booking-iframe" loading="lazy" aria-label="Booking calendar"></iframe>
+        </div>
+        <div class="booking-iframe-footer">
+          <span>Showing real, up-to-date availability.</span>
+          <a href="https://selvinx.com/?fluent-booking=calendar&host=selvinx&event=30min-3" target="_blank" rel="noopener">Open in new tab <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="kaif-footer">
+  <div class="footer-cta">
+    <div class="bg-grid" style="position:absolute;inset:0;opacity:.5;pointer-events:none"></div>
+    <div class="footer-cta-mesh" aria-hidden="true"></div>
+    <div class="kaif-container" style="position:relative">
+      <div class="footer-cta-content reveal">
+        <div class="eyebrow" style="margin:0 auto">
+          <span style="position:relative;display:inline-flex;width:6px;height:6px">
+            <span style="position:absolute;inset:0;border-radius:9999px;background:#2c64a1;animation:ping 1.5s cubic-bezier(0,0,.2,1) infinite"></span>
+            <span style="position:relative;display:inline-flex;width:6px;height:6px;border-radius:9999px;background:#2c64a1"></span>
+          </span>
+          Your move
+        </div>
+        <h2 class="h-section" style="margin-top:1.25rem;color:#0a0a0a">Your agency needs<br><span class="text-gradient-brand">a dev who ships.</span></h2>
+        <p style="margin-top:1.25rem;max-width:28rem;font-size:1rem;color:rgba(10,10,10,.6)">15 minutes. Tell me about your workload. Let's see if there's a fit.</p>
+        <div class="footer-cta-buttons">
+          <a href="#book" class="btn-primary shine-on-hover">Book a discovery call <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></a>
+          <a href="/" class="btn-secondary">← Back to main site</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="kaif-container">
+      <div class="footer-bottom-content">
+        <div class="footer-brand">
+          <span class="footer-brand-badge"><span>K</span></span>
+          <div>
+            <div class="footer-brand-name">Kaif Ali</div>
+            <div class="footer-brand-desc">White-label WordPress Development</div>
+          </div>
+        </div>
+        <nav class="footer-nav" aria-label="Footer">
+          <a href="mailto:kaif@selvinx.com">kaif@selvinx.com</a>
+          <a href="https://www.linkedin.com/in/kaif-ali" target="_blank" rel="noopener">LinkedIn ↗</a>
+          <a href="/">Main site ↗</a>
+          <button id="privacyBtn" style="background:none;border:none;color:inherit;font-size:inherit;cursor:pointer;padding:0">Privacy</button>
+        </nav>
+        <div class="footer-copy">© <span id="year"></span> Kaif Ali</div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<div class="cookie-notice hidden" id="cookieNotice" role="dialog" aria-label="Cookie notice">
+  <div class="cookie-notice-content">
+    <p class="cookie-notice-text">This page embeds a booking calendar (Selvinx). No tracking pixels. <button id="privacyLink" style="background:none;border:none;color:#2c64a1;font-weight:600;text-decoration:underline;cursor:pointer;padding:0;font-size:inherit">Privacy</button></p>
+    <button class="cookie-notice-btn" id="cookieDismiss">Got it</button>
+  </div>
+</div>
+
+<div class="privacy-modal hidden" id="privacyModal" role="dialog" aria-modal="true" aria-label="Privacy notice">
+  <div class="privacy-modal-content">
+    <div class="privacy-modal-header">
+      <h2 class="privacy-modal-title">Privacy</h2>
+      <button class="privacy-modal-close" id="privacyClose" aria-label="Close privacy notice">✕</button>
+    </div>
+    <div class="privacy-modal-body">
+      <p><strong>What we collect:</strong> This page itself does not store any personal data.</p>
+      <p><strong>Booking:</strong> When you book a Discovery Call, the booking is handled by Selvinx (selvinx.com). Your name, email, and selected time are processed by Selvinx to schedule and confirm your appointment. Kaif receives these details directly. NDA available on request.</p>
+      <p><strong>Analytics:</strong> This page does not currently run third-party analytics or tracking pixels.</p>
+      <p><strong>Accessibility:</strong> This page aims to meet WCAG 2.1 AA. If you encounter a barrier, email <a href="mailto:kaif@selvinx.com">kaif@selvinx.com</a>.</p>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  var month = new Date().toLocaleString('en-US', {month:'long'});
+  var eb = document.getElementById('bookingEyebrow');
+  if(eb) eb.textContent = 'Now booking ' + month + ' Discovery Calls';
+  var y = document.getElementById('year');
+  if(y) y.textContent = new Date().getFullYear();
+
+  var sp = document.getElementById('scrollProgress');
+  function updateProgress(){
+    var max = document.documentElement.scrollHeight - window.innerHeight;
+    sp.style.transform = 'scaleX(' + (max > 0 ? window.scrollY / max : 0) + ')';
+  }
+  window.addEventListener('scroll', updateProgress, {passive:true});
+  updateProgress();
+
+  var header = document.getElementById('navbar');
+  function onScroll(){ header.classList.toggle('scrolled', window.scrollY > 24); }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+
+  var navLinks = document.querySelectorAll('.kaif-nav-link');
+  var sections = ['problem','services','why-me','process','faq'];
+  function spy(){
+    var current = '';
+    for(var i=0;i<sections.length;i++){
+      var el = document.getElementById(sections[i]);
+      if(!el) continue;
+      var rect = el.getBoundingClientRect();
+      if(rect.top <= 140 && rect.bottom >= 140){ current = sections[i]; break; }
+    }
+    navLinks.forEach(function(l){ l.classList.toggle('active', l.getAttribute('href') === '#' + current); });
+  }
+  window.addEventListener('scroll', spy, {passive:true});
+
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){
+    a.addEventListener('click', function(e){
+      var href = a.getAttribute('href');
+      if(href === '#' || href.length < 2) return;
+      var el = document.querySelector(href);
+      if(el){
+        e.preventDefault();
+        window.scrollTo({top: el.offsetTop - 80, behavior:'smooth'});
+        closeMenu();
+      }
+    });
+  });
+
+  var menuBtn = document.getElementById('menuBtn');
+  var mobileMenu = document.getElementById('mobileMenu');
+  var backdrop = document.getElementById('menuBackdrop');
+  function openMenu(){ mobileMenu.classList.remove('hidden'); mobileMenu.classList.add('visible'); menuBtn.setAttribute('aria-expanded','true'); menuBtn.setAttribute('aria-label','Close menu'); }
+  function closeMenu(){ mobileMenu.classList.add('hidden'); mobileMenu.classList.remove('visible'); menuBtn.setAttribute('aria-expanded','false'); menuBtn.setAttribute('aria-label','Open menu'); }
+  menuBtn.addEventListener('click', function(){ mobileMenu.classList.contains('visible') ? closeMenu() : openMenu(); });
+  backdrop.addEventListener('click', closeMenu);
+
+  var revealObs = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){ e.target.classList.add('visible'); revealObs.unobserve(e.target); }
+    });
+  }, {threshold:0.1, rootMargin:'-60px'});
+  document.querySelectorAll('.reveal, .stagger-item').forEach(function(el){ revealObs.observe(el); });
+
+  document.querySelectorAll('.faq-item').forEach(function(item){
+    var btn = item.querySelector('.faq-question');
+    var answer = item.querySelector('.faq-answer');
+    btn.addEventListener('click', function(){
+      var isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(function(other){
+        other.classList.remove('open');
+        other.querySelector('.faq-question').setAttribute('aria-expanded','false');
+        other.querySelector('.faq-answer').style.maxHeight = '0';
+      });
+      if(!isOpen){ item.classList.add('open'); btn.setAttribute('aria-expanded','true'); answer.style.maxHeight = answer.scrollHeight + 'px'; }
+    });
+  });
+  var firstFaq = document.querySelector('.faq-item.open .faq-answer');
+  if(firstFaq) firstFaq.style.maxHeight = firstFaq.scrollHeight + 'px';
+
+  var cn = document.getElementById('cookieNotice');
+  var cd = document.getElementById('cookieDismiss');
+  if(!localStorage.getItem('kaif-cookie-consent')){ setTimeout(function(){ cn.classList.remove('hidden'); }, 2500); }
+  cd.addEventListener('click', function(){ localStorage.setItem('kaif-cookie-consent','dismissed'); cn.classList.add('hidden'); });
+
+  var pm = document.getElementById('privacyModal');
+  var pp = document.getElementById('privacyBtn');
+  var pc = document.getElementById('privacyClose');
+  var pl = document.getElementById('privacyLink');
+  function openPrivacy(e){ e.preventDefault(); pm.classList.remove('hidden'); }
+  function closePrivacy(){ pm.classList.add('hidden'); }
+  pp.addEventListener('click', openPrivacy);
+  pl.addEventListener('click', openPrivacy);
+  pc.addEventListener('click', closePrivacy);
+  pm.addEventListener('click', function(e){ if(e.target === pm) closePrivacy(); });
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape') closePrivacy(); });
+})();
+</script>
+</body>
+</html>'''
+
+os.makedirs(os.path.dirname(OUTPUT), exist_ok=True)
+with open(OUTPUT, 'w', encoding='utf-8') as f:
+    f.write(HTML)
+print(f"Written: {OUTPUT} ({len(HTML)} bytes)")
