@@ -245,63 +245,60 @@
     text-wrap: pretty;
   }
 
-  /* ─── CUSTOM SCROLLBAR ─── */
+/* ─── CUSTOM SCROLLBAR ─── */
 
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c8c8c2;
+  border-radius: 10px;
+  border: 2px solid var(--background);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #2c64a1;
+}
+
+
+/* ─── MOBILE SCROLLBAR ─── */
+
+@media (max-width: 767px) {
+  /* Keep the thumb, remove the visible track */
   ::-webkit-scrollbar {
-    width: 10px;
-    height: 10px;
-  }
-
-  ::-webkit-scrollbar-track {
+    width: 8px;
+    height: 8px;
     background: transparent;
   }
 
+  ::-webkit-scrollbar-track {
+    background: #0a0a0a !important;
+    border: none !important;
+    box-shadow: none !important;
+  }
+
   ::-webkit-scrollbar-thumb {
-    background: #c8c8c2;
-    border-radius: 10px;
-    border: 2px solid var(--background);
+    background: #c8c8c2 !important;
+    border: none !important;
+    border-radius: 999px;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background: #2c64a1;
+    background: #2c64a1 !important;
   }
 
-  /* ─── MOBILE SCROLLBAR ─── */
-  /*
-   * Mobile:
-   * - Track is completely transparent
-   * - Thumb remains visible
-   * - Scrolling is NOT disabled
-   */
-
-  @media (max-width: 767px) {
-    ::-webkit-scrollbar {
-      width: 6px;
-      height: 6px;
-      background: transparent;
-    }
-
-    ::-webkit-scrollbar-track {
-      background: transparent !important;
-      border: none !important;
-      box-shadow: none !important;
-    }
-
-    ::-webkit-scrollbar-thumb {
-      background: #c8c8c2;
-      border: none;
-      border-radius: 999px;
-    }
-
-    ::-webkit-scrollbar-thumb:hover {
-      background: #2c64a1;
-    }
-
-    html {
-      scrollbar-color: #c8c8c2 transparent;
-      scrollbar-width: thin;
-    }
+  /* Firefox / other browsers */
+  html {
+    scrollbar-width: thin;
+    scrollbar-color: #c8c8c2 #0a0a0a;
   }
+}
 
   /* Marquee animations */
 
