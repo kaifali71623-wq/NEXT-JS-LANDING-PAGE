@@ -5,7 +5,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { ArrowUpRight, CheckCircle2, Clock, Mail, UserCheck } from "lucide-react";
 
 const BOOKING_URL =
-  "https://selvinx.com/?fluent-booking=calendar&host=selvinx&event=30min-3";
+  "https://kaif.selvinx.com/?fluent-booking=calendar&host=kaif&event=15min";
 
 const WHAT_YOU_GET = [
   "Quick assessment of your dev needs",
